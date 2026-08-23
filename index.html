@@ -1,0 +1,2179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buying Point Receipts Map</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+/>
+<style>
+:root{
+  --soil:#2E2418;
+  --soil-light:#4A3B28;
+  --paper:#F1E9D8;
+  --paper-dim:#E4D9C0;
+  --wheat:#C9A227;
+  --leaf:#3F5B3D;
+  --leaf-light:#6E8C5D;
+  --rust:#9A4B2E;
+  --line:#B9A97E;
+}
+*{
+  box-sizing:border-box;
+}
+html,
+body{
+  margin:0;
+  padding:0;
+  height:100%;
+  background:var(--soil);
+  font-family:"Courier New",ui-monospace,monospace;
+  color:var(--paper);
+}
+.wrap{
+  display:flex;
+  height:100vh;
+  min-height:520px;
+}
+#map{
+  flex:1 1 65%;
+}
+.panel{
+  flex:0 0 360px;
+  background:var(--soil-light);
+  border-left:3px solid var(--wheat);
+  padding:20px 18px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+}
+h1{
+  font-family:Georgia,serif;
+  font-size:21px;
+  margin:0 0 4px;
+  color:var(--wheat);
+}
+.subline{
+  font-size:11px;
+  color:var(--paper-dim);
+  opacity:.75;
+  margin:0 0 16px;
+}
+/* =========================
+   UPLOAD
+   ========================= */
+.upload-box{
+  background:var(--soil);
+  border:2px dashed var(--wheat);
+  border-radius:3px;
+  padding:14px;
+  margin-bottom:16px;
+}
+.upload-box.hidden{
+  display:none;
+}
+.upload-box input[type=file]{
+  font-family:inherit;
+  font-size:10px;
+  color:var(--paper-dim);
+  width:100%;
+  margin-bottom:8px;
+}
+.upload-label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--leaf-light);
+  display:block;
+  margin-bottom:8px;
+}
+.field-label{
+  font-size:9.5px;
+  color:var(--paper-dim);
+  opacity:.8;
+  display:block;
+  margin:6px 0 3px;
+}
+.status{
+  font-size:11px;
+  margin-top:8px;
+  line-height:1.5;
+}
+.status.ok{
+  color:var(--leaf-light);
+}
+.status.err{
+  color:#D97757;
+}
+.status.pending{
+  color:var(--wheat);
+}
+.columns-hint{
+  font-size:9.5px;
+  color:var(--paper-dim);
+  opacity:.55;
+  margin-top:8px;
+  line-height:1.5;
+}
+/* =========================
+   FILTERS
+   ========================= */
+.filters{
+  background:var(--soil);
+  border:1px solid var(--line);
+  padding:12px;
+  margin-bottom:16px;
+}
+.filter-title{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--wheat);
+  margin-bottom:8px;
+  font-weight:bold;
+}
+.filters select{
+  width:100%;
+  background:var(--soil-light);
+  color:var(--paper);
+  border:1px solid var(--line);
+  padding:8px;
+  font-family:inherit;
+  font-size:10px;
+  margin-bottom:7px;
+  border-radius:2px;
+}
+.filters select:focus{
+  outline:none;
+  border-color:var(--wheat);
+}
+.clear-filter{
+  width:100%;
+  background:var(--wheat);
+  color:var(--soil);
+  border:none;
+  padding:8px;
+  font-family:inherit;
+  font-size:10px;
+  cursor:pointer;
+  text-transform:uppercase;
+  font-weight:bold;
+  border-radius:2px;
+}
+.clear-filter:hover{
+  background:var(--paper);
+}
+.filter-status{
+  font-size:9px;
+  color:var(--paper-dim);
+  opacity:.75;
+  margin-top:8px;
+  line-height:1.4;
+}
+/* =========================
+   VIEW BUTTONS
+   ========================= */
+.toggle{
+  display:flex;
+  gap:5px;
+  margin-bottom:16px;
+  flex-wrap:wrap;
+}
+.toggle button{
+  flex:1 1 auto;
+  background:var(--soil);
+  color:var(--paper-dim);
+  border:1px solid var(--line);
+  padding:7px 4px;
+  font-family:inherit;
+  font-size:10px;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+  cursor:pointer;
+  border-radius:2px;
+}
+.toggle button.active{
+  background:var(--wheat);
+  color:var(--soil);
+  border-color:var(--wheat);
+  font-weight:bold;
+}
+/* =========================
+   SUMMARY
+   ========================= */
+.summary{
+  background:var(--paper);
+  color:var(--soil);
+  border-radius:2px;
+  padding:14px 14px 8px;
+  box-shadow:0 4px 12px rgba(0,0,0,.35);
+}
+.summary-head{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--soil-light);
+  border-bottom:2px dashed var(--line);
+  padding-bottom:6px;
+  margin-bottom:6px;
+}
+.srow{
+  display:flex;
+  justify-content:space-between;
+  padding:6px 0;
+  border-bottom:1px dotted var(--line);
+  font-size:12.5px;
+  gap:8px;
+}
+.srow span:first-child{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.srow .qty{
+  font-weight:bold;
+  white-space:nowrap;
+}
+.stotal{
+  display:flex;
+  justify-content:space-between;
+  margin-top:4px;
+  padding:8px 0 2px;
+  border-top:2px solid var(--soil);
+  font-size:13.5px;
+  font-weight:bold;
+  color:var(--rust);
+}
+.empty-note{
+  font-size:12px;
+  color:var(--soil-light);
+  text-align:center;
+  padding:20px 6px;
+}
+/* =========================
+   META
+   ========================= */
+.meta{
+  margin-top:16px;
+  font-size:10.5px;
+  line-height:1.7;
+  color:var(--paper-dim);
+  opacity:.85;
+}
+.meta b{
+  color:var(--wheat);
+}
+/* =========================
+   POPUPS
+   ========================= */
+.leaflet-popup-content-wrapper{
+  background:var(--paper);
+  color:var(--soil);
+  border-radius:2px;
+}
+.leaflet-popup-tip{
+  background:var(--paper);
+}
+.popup-title{
+  font-family:Georgia,serif;
+  font-weight:bold;
+  font-size:14px;
+  margin-bottom:6px;
+  border-bottom:2px dashed var(--line);
+  padding-bottom:4px;
+}
+.popup-row{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  font-size:12.5px;
+  padding:2px 0;
+}
+.popup-total{
+  margin-top:6px;
+  padding-top:6px;
+  border-top:2px solid var(--soil);
+  font-weight:bold;
+  color:var(--rust);
+  display:flex;
+  justify-content:space-between;
+}
+/* =========================
+   LAYER CONTROL
+   ========================= */
+.leaflet-control-layers{
+  background:var(--paper)!important;
+  color:var(--soil);
+  font-size:12px;
+  font-family:"Courier New",ui-monospace,monospace;
+}
+/* =========================
+   MOBILE
+   ========================= */
+@media(max-width:720px){
+  .wrap{
+    flex-direction:column;
+  }
+  .panel{
+    flex:0 0 auto;
+    border-left:none;
+    border-top:3px solid var(--wheat);
+    max-height:55vh;
+  }
+  #map{
+    flex:1 1 45vh;
+  }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="map"></div>
+  <div class="panel">
+    <h1>Buying Point Receipts</h1>
+    <p class="subline" id="sourceLine">
+      Loading data from repo...
+    </p>
+    <!-- =========================
+         UPLOAD
+         ========================= -->
+    <div class="upload-box" id="uploadBox">
+      <span class="upload-label">
+        Manual load (fallback)
+      </span>
+      <span class="field-label">
+        Receipts CSV
+      </span>
+      <input
+        type="file"
+        id="csvInput"
+        accept=".csv"
+      >
+      <span class="field-label">
+        Boundaries GeoJSON
+      </span>
+      <input
+        type="file"
+        id="geoInput"
+        accept=".geojson,.json"
+      >
+      <div class="status" id="status">
+        Checking for data/receipts.csv and data/boundaries.geojson...
+      </div>
+      <div class="columns-hint">
+        CSV columns needed:
+        name, lat, lon, region, hub, catchment, crop, qty
+      </div>
+    </div>
+    <!-- =========================
+         FILTERS
+         ========================= -->
+    <div class="filters">
+      <div class="filter-title">
+        Filter Data
+      </div>
+      <label class="field-label">
+        Hub
+      </label>
+      <select id="hubFilter">
+        <option value="">
+          All Hubs
+        </option>
+      </select>
+      <label class="field-label">
+        Crop
+      </label>
+      <select id="cropFilter">
+        <option value="">
+          All Crops
+        </option>
+      </select>
+      <label class="field-label">
+        Show
+      </label>
+      <select id="rankingFilter">
+        <option value="all">
+          All buying points
+        </option>
+        <option value="10">
+          Top 10 highest producing
+        </option>
+        <option value="20">
+          Top 20 highest producing
+        </option>
+        <option value="50">
+          Top 50 highest producing
+        </option>
+      </select>
+      <button
+        id="clearFilters"
+        class="clear-filter"
+      >
+        Clear Filters
+      </button>
+      <div
+        id="filterStatus"
+        class="filter-status"
+      >
+        Showing all data
+      </div>
+    </div>
+    <!-- =========================
+         MAP VIEW
+         ========================= -->
+    <div class="toggle">
+      <button
+        id="btnPoints"
+        class="active"
+      >
+        Points
+      </button>
+      <button
+        id="btnCatchment"
+      >
+        Catchment
+      </button>
+      <button
+        id="btnHub"
+      >
+        Hub
+      </button>
+      <button
+        id="btnRegion"
+      >
+        Region
+      </button>
+    </div>
+    <!-- =========================
+         SUMMARY
+         ========================= -->
+    <div
+      class="summary"
+      id="summary"
+    ></div>
+    <!-- =========================
+         META
+         ========================= -->
+    <div class="meta">
+      <div>
+        <b>Buying points:</b>
+        <span id="countPoints">-</span>
+      </div>
+      <div>
+        <b>Catchments:</b>
+        <span id="countCatchments">-</span>
+      </div>
+      <div>
+        <b>Hubs:</b>
+        <span id="countHubs">-</span>
+      </div>
+      <div>
+        <b>Regions:</b>
+        <span id="countRegions">-</span>
+      </div>
+      <div>
+        <b>Total received:</b>
+        <span id="grandTotal">-</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- =========================
+     LIBRARIES
+     ========================= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script>
+/* =========================================================
+   REQUIRED CSV COLUMNS
+   ========================================================= */
+const REQUIRED = [
+  "name",
+  "lat",
+  "lon",
+  "region",
+  "hub",
+  "catchment",
+  "crop",
+  "qty"
+];
+/* =========================================================
+   GLOBAL DATA
+   ========================================================= */
+let currentRows = [];
+let filteredRows = [];
+let boundariesData = null;
+let buyingPoints = [];
+let byCatchment = [];
+let byHub = [];
+let byRegion = [];
+let grandTotal = 0;
+let activeKey = "points";
+/* =========================================================
+   HELPERS
+   ========================================================= */
+function pointTotal(point){
+  return point.crops.reduce(
+    (sum,crop) =>
+      sum + crop.qty,
+    0
+  );
+}
+function fmt(number){
+  return Math.round(
+    Number(number) || 0
+  ).toLocaleString();
+}
+function radiusFor(total,maxTotal){
+  return 10 +
+    (total / (maxTotal || 1)) * 22;
+}
+function opacityFor(total,maxTotal){
+  return .15 +
+    .65 *
+    (total / (maxTotal || 1));
+}
+/* =========================================================
+   BUILD BUYING POINTS
+   ========================================================= */
+function buildFromRows(rows){
+  const pointsMap = {};
+  rows.forEach(row => {
+    const key = row.name;
+    if(!pointsMap[key]){
+      pointsMap[key] = {
+        name:row.name,
+        lat:Number(row.lat),
+        lon:Number(row.lon),
+        region:row.region,
+        hub:row.hub,
+        catchment:row.catchment,
+        crops:[]
+      };
+    }
+    const quantity =
+      Number(row.qty) || 0;
+    const existing =
+      pointsMap[key].crops.find(
+        crop =>
+          crop.crop === row.crop
+      );
+    if(existing){
+      existing.qty += quantity;
+    }
+    else{
+      pointsMap[key].crops.push({
+        crop:row.crop,
+        qty:quantity
+      });
+    }
+  });
+  return Object.values(pointsMap);
+}
+/* =========================================================
+   GROUPING
+   ========================================================= */
+function groupBy(list,keyFunction){
+  const groups = {};
+  list.forEach(point => {
+    const key =
+      keyFunction(point) ||
+      "(unspecified)";
+    if(!groups[key]){
+      groups[key] = {
+        name:key,
+        points:[],
+        total:0
+      };
+    }
+    groups[key].points.push(point);
+    groups[key].total +=
+      pointTotal(point);
+  });
+  Object.values(groups).forEach(group => {
+    group.lat =
+      group.points.reduce(
+        (sum,p) =>
+          sum + p.lat,
+        0
+      ) /
+      group.points.length;
+    group.lon =
+      group.points.reduce(
+        (sum,p) =>
+          sum + p.lon,
+        0
+      ) /
+      group.points.length;
+  });
+  return Object.values(groups);
+}
+/* =========================================================
+   MAP
+   ========================================================= */
+/*
+   FIX: give the map a valid initial
+   view immediately. Previously L.map("map")
+   was created with no view at all, so Leaflet
+   rendered nothing until zoomToCountry()
+   successfully called fitBounds(). If that
+   ever silently failed (see zoomToCountry fix
+   below), the page stayed blank forever.
+   This default is overwritten as soon as real
+   data loads.
+*/
+const map =
+  L.map("map").setView([0,0],2);
+/* OpenStreetMap */
+const osmLayer =
+  L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+      attribution:
+        "&copy; OpenStreetMap contributors",
+      maxZoom:19
+    }
+  );
+/* Satellite */
+const satelliteLayer =
+  L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution:
+        "Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics",
+      maxZoom:19
+    }
+  );
+/* Labels / roads */
+const labelsLayer =
+  L.tileLayer(
+    "https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution:"Esri",
+      maxZoom:19
+    }
+  );
+/* Hybrid */
+const hybridLayer =
+  L.layerGroup([
+    satelliteLayer,
+    labelsLayer
+  ]);
+/* Default map */
+osmLayer.addTo(map);
+/* Basemap selector */
+L.control.layers(
+  {
+    "OpenStreetMap":osmLayer,
+    "Hybrid":hybridLayer
+  },
+  null,
+  {
+    position:"topright"
+  }
+).addTo(map);
+/* =========================================================
+   MAP LAYERS
+   ========================================================= */
+let countryBoundaryLayer =
+  L.layerGroup();
+let hubBoundaryLayer =
+  L.layerGroup();
+let regionBoundaryLayer =
+  L.layerGroup();
+let catchmentBoundaryLayer =
+  L.layerGroup();
+let pointsLayer =
+  L.layerGroup();
+let catchmentLayer =
+  L.layerGroup();
+let hubLayer =
+  L.layerGroup();
+let regionLayer =
+  L.layerGroup();
+/* =========================================================
+   COUNTRY BOUNDARY
+   ========================================================= */
+function buildCountryBoundary(){
+  const layer =
+    L.layerGroup();
+  if(
+    !boundariesData ||
+    !boundariesData.features
+  ){
+    return layer;
+  }
+  const features =
+    boundariesData.features.filter(
+      feature =>
+        feature.properties &&
+        String(
+          feature.properties.level
+        ).toLowerCase() ===
+        "country"
+    );
+  if(features.length === 0){
+    return layer;
+  }
+  const geo =
+    L.geoJSON(
+      {
+        type:"FeatureCollection",
+        features:features
+      },
+      {
+        style:{
+          color:"#111111",
+          weight:3,
+          fill:false,
+          opacity:1
+        }
+      }
+    );
+  geo.addTo(layer);
+  return layer;
+}
+/* =========================================================
+   HUB BOUNDARIES
+   ========================================================= */
+function buildHubBoundaryLayer(){
+  const layer =
+    L.layerGroup();
+  if(
+    !boundariesData ||
+    !boundariesData.features
+  ){
+    return layer;
+  }
+  const features =
+    boundariesData.features.filter(
+      feature =>
+        feature.properties &&
+        String(
+          feature.properties.level
+        ).toLowerCase() ===
+        "hub"
+    );
+  if(features.length === 0){
+    return layer;
+  }
+  const geo =
+    L.geoJSON(
+      {
+        type:"FeatureCollection",
+        features:features
+      },
+      {
+        style:{
+          color:"#3F5B3D",
+          weight:2.5,
+          fillColor:"#6E8C5D",
+          fillOpacity:.04,
+          dashArray:"6,4"
+        },
+        onEachFeature:
+          (feature,layerObject) => {
+            const name =
+              feature.properties.name ||
+              "Hub";
+            layerObject.bindTooltip(
+              name,
+              {
+                sticky:true,
+                direction:"center"
+              }
+            );
+            layerObject.bindPopup(`
+              <div class="popup-title">
+                ${name}
+              </div>
+              <div class="popup-row">
+                <span>Level</span>
+                <span>Hub</span>
+              </div>
+            `);
+          }
+      }
+    );
+  geo.addTo(layer);
+  return layer;
+}
+/* =========================================================
+   REGION BOUNDARIES
+   ========================================================= */
+function buildRegionBoundaryLayer(){
+  const layer =
+    L.layerGroup();
+  if(
+    !boundariesData ||
+    !boundariesData.features
+  ){
+    return layer;
+  }
+  const features =
+    boundariesData.features.filter(
+      feature =>
+        feature.properties &&
+        String(
+          feature.properties.level
+        ).toLowerCase() ===
+        "region"
+    );
+  if(features.length === 0){
+    return layer;
+  }
+  L.geoJSON(
+    {
+      type:"FeatureCollection",
+      features:features
+    },
+    {
+      style:{
+        color:"#9A4B2E",
+        weight:1.5,
+        fill:false,
+        opacity:.7
+      }
+    }
+  ).addTo(layer);
+  return layer;
+}
+/* =========================================================
+   CATCHMENT BOUNDARIES
+   ========================================================= */
+function buildCatchmentBoundaryLayer(){
+  const layer =
+    L.layerGroup();
+  if(
+    !boundariesData ||
+    !boundariesData.features
+  ){
+    return layer;
+  }
+  const features =
+    boundariesData.features.filter(
+      feature =>
+        feature.properties &&
+        String(
+          feature.properties.level
+        ).toLowerCase() ===
+        "catchment"
+    );
+  if(features.length === 0){
+    return layer;
+  }
+  L.geoJSON(
+    {
+      type:"FeatureCollection",
+      features:features
+    },
+    {
+      style:{
+        color:"#6E8C5D",
+        weight:1,
+        fill:false,
+        opacity:.45,
+        dashArray:"3,4"
+      }
+    }
+  ).addTo(layer);
+  return layer;
+}
+/* =========================================================
+   ZOOM TO COUNTRY
+   ========================================================= */
+function zoomToCountry(){
+  /*
+     FIX: every early-return path in this
+     function now falls back to
+     recenterOnData() instead of doing
+     nothing. Previously, if boundariesData
+     was missing, had no "country" feature,
+     or produced invalid bounds, the function
+     silently returned and the map view was
+     NEVER set on initial load — leaving a
+     permanently blank page unless a filter
+     (e.g. hub) happened to trigger a
+     different code path that did set a view.
+  */
+  if(
+    !boundariesData ||
+    !boundariesData.features
+  ){
+    recenterOnData();
+    return;
+  }
+  const features =
+    boundariesData.features.filter(
+      feature =>
+        feature.properties &&
+        String(
+          feature.properties.level
+        ).toLowerCase() ===
+        "country"
+    );
+  if(features.length === 0){
+    recenterOnData();
+    return;
+  }
+  const countryGeo =
+    L.geoJSON({
+      type:"FeatureCollection",
+      features:features
+    });
+  const bounds =
+    countryGeo.getBounds();
+  if(bounds.isValid()){
+    map.fitBounds(
+      bounds,
+      {
+        padding:[25,25]
+      }
+    );
+  }
+  else{
+    recenterOnData();
+  }
+}
+/* =========================================================
+   ZOOM TO HUB
+   ========================================================= */
+function zoomToSelectedHub(){
+  const selectedHub =
+    document.getElementById(
+      "hubFilter"
+    ).value;
+  if(!selectedHub){
+    zoomToCountry();
+    return;
+  }
+  if(
+    !boundariesData ||
+    !boundariesData.features
+  ){
+    recenterOnData();
+    return;
+  }
+  const features =
+    boundariesData.features.filter(
+      feature => {
+        if(
+          !feature.properties
+        ){
+          return false;
+        }
+        const level =
+          String(
+            feature.properties.level
+          ).toLowerCase();
+        const name =
+          String(
+            feature.properties.name ||
+            ""
+          ).trim();
+        return (
+          level === "hub" &&
+          name ===
+          String(
+            selectedHub
+          ).trim()
+        );
+      }
+    );
+  if(features.length > 0){
+    const geo =
+      L.geoJSON({
+        type:"FeatureCollection",
+        features:features
+      });
+    const bounds =
+      geo.getBounds();
+    if(bounds.isValid()){
+      map.fitBounds(
+        bounds,
+        {
+          padding:[30,30]
+        }
+      );
+      return;
+    }
+  }
+  /* Fallback:
+     zoom to filtered buying points */
+  if(buyingPoints.length){
+    const bounds =
+      L.latLngBounds(
+        buyingPoints.map(
+          point => [
+            point.lat,
+            point.lon
+          ]
+        )
+      );
+    if(bounds.isValid()){
+      map.fitBounds(
+        bounds,
+        {
+          padding:[30,30]
+        }
+      );
+    }
+  }
+}
+/* =========================================================
+   BUILD GROUPING MAP LAYER
+   ========================================================= */
+function buildLevelLayer(
+  groups,
+  level,
+  bubbleColor
+){
+  const layer =
+    L.layerGroup();
+  if(groups.length === 0){
+    return layer;
+  }
+  const maxGroup =
+    Math.max(
+      ...groups.map(
+        group => group.total
+      ),
+      1
+    );
+  const byName = {};
+  groups.forEach(group => {
+    byName[group.name] =
+      group;
+  });
+  const coveredNames =
+    new Set();
+  if(
+    boundariesData &&
+    boundariesData.features
+  ){
+    const features =
+      boundariesData.features.filter(
+        feature =>
+          feature.properties &&
+          String(
+            feature.properties.level
+          ).toLowerCase() ===
+          level.toLowerCase()
+      );
+    if(features.length > 0){
+      const geo =
+        L.geoJSON(
+          {
+            type:"FeatureCollection",
+            features:features
+          },
+          {
+            style:feature => {
+              const group =
+                byName[
+                  feature.properties.name
+                ];
+              const total =
+                group
+                  ? group.total
+                  : 0;
+              return {
+                color:"#2E2418",
+                weight:1.5,
+                fillColor:bubbleColor,
+                fillOpacity:
+                  group
+                    ? opacityFor(
+                        total,
+                        maxGroup
+                      )
+                    : .06
+              };
+            },
+            onEachFeature:
+              (feature,layerObject) => {
+                const group =
+                  byName[
+                    feature.properties.name
+                  ];
+                let popup = `
+                  <div class="popup-title">
+                    ${feature.properties.name}
+                    (${level})
+                  </div>
+                `;
+                if(group){
+                  popup += `
+                    <div class="popup-row">
+                      <span>Buying points</span>
+                      <span>${group.points.length}</span>
+                    </div>
+                    <div class="popup-total">
+                      <span>Total received</span>
+                      <span>${fmt(group.total)}</span>
+                    </div>
+                  `;
+                }
+                else{
+                  popup += `
+                    <div class="popup-row">
+                      <span>No receipts matched</span>
+                    </div>
+                  `;
+                }
+                layerObject.bindPopup(
+                  popup
+                );
+              }
+          }
+        );
+      geo.addTo(layer);
+      features.forEach(feature => {
+        coveredNames.add(
+          feature.properties.name
+        );
+      });
+    }
+  }
+  /* Fallback bubbles */
+  groups
+    .filter(
+      group =>
+        !coveredNames.has(
+          group.name
+        )
+    )
+    .forEach(group => {
+      const popup = `
+        <div class="popup-title">
+          ${group.name} (${level})
+        </div>
+        <div class="popup-row">
+          <span>Buying points</span>
+          <span>${group.points.length}</span>
+        </div>
+        <div class="popup-total">
+          <span>Total received</span>
+          <span>${fmt(group.total)}</span>
+        </div>
+      `;
+      L.circleMarker(
+        [
+          group.lat,
+          group.lon
+        ],
+        {
+          radius:
+            radiusFor(
+              group.total,
+              maxGroup
+            ),
+          color:"#2E2418",
+          weight:2,
+          fillColor:bubbleColor,
+          fillOpacity:.8
+        }
+      )
+      .bindPopup(popup)
+      .addTo(layer);
+    });
+  return layer;
+}
+/* =========================================================
+   BUILD BUYING POINTS
+   ========================================================= */
+function buildPointsLayer(){
+  const layer =
+    L.layerGroup();
+  if(buyingPoints.length === 0){
+    return layer;
+  }
+  const maxPoint =
+    Math.max(
+      ...buyingPoints.map(
+        pointTotal
+      ),
+      1
+    );
+  buyingPoints.forEach(point => {
+    const total =
+      pointTotal(point);
+    let popup = `
+      <div class="popup-title">
+        ${point.name}
+      </div>
+      <div class="popup-row">
+        <span>Hub</span>
+        <span>${point.hub || "-"}</span>
+      </div>
+      <div class="popup-row">
+        <span>Catchment</span>
+        <span>${point.catchment || "-"}</span>
+      </div>
+      <div class="popup-row">
+        <span>Region</span>
+        <span>${point.region || "-"}</span>
+      </div>
+    `;
+    point.crops.forEach(crop => {
+      popup += `
+        <div class="popup-row">
+          <span>${crop.crop}</span>
+          <span>${fmt(crop.qty)}</span>
+        </div>
+      `;
+    });
+    popup += `
+      <div class="popup-total">
+        <span>Total</span>
+        <span>${fmt(total)}</span>
+      </div>
+    `;
+    L.circleMarker(
+      [
+        point.lat,
+        point.lon
+      ],
+      {
+        radius:
+          radiusFor(
+            total,
+            maxPoint
+          ),
+        color:"#2E2418",
+        weight:2,
+        fillColor:"#C9A227",
+        fillOpacity:.85
+      }
+    )
+    .bindPopup(popup)
+    .addTo(layer);
+  });
+  return layer;
+}
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+function renderSummary(){
+  const element =
+    document.getElementById(
+      "summary"
+    );
+  if(buyingPoints.length === 0){
+    element.innerHTML = `
+      <div class="empty-note">
+        No data matches the selected filters.
+      </div>
+    `;
+    return;
+  }
+  let groups;
+  let label;
+  if(activeKey === "points"){
+    let html = `
+      <div class="summary-head">
+        Buying points
+      </div>
+    `;
+    buyingPoints
+      .slice()
+      .sort(
+        (a,b) =>
+          pointTotal(b) -
+          pointTotal(a)
+      )
+      .forEach(point => {
+        html += `
+          <div class="srow">
+            <span>
+              ${point.name}
+            </span>
+            <span class="qty">
+              ${fmt(
+                pointTotal(point)
+              )}
+            </span>
+          </div>
+        `;
+      });
+    html += `
+      <div class="stotal">
+        <span>Total</span>
+        <span>
+          ${fmt(grandTotal)}
+        </span>
+      </div>
+    `;
+    element.innerHTML =
+      html;
+    return;
+  }
+  if(activeKey === "catchment"){
+    groups = byCatchment;
+    label = "By catchment";
+  }
+  if(activeKey === "hub"){
+    groups = byHub;
+    label = "By hub";
+  }
+  if(activeKey === "region"){
+    groups = byRegion;
+    label = "By region";
+  }
+  let html = `
+    <div class="summary-head">
+      ${label}
+    </div>
+  `;
+  groups
+    .slice()
+    .sort(
+      (a,b) =>
+        b.total -
+        a.total
+    )
+    .forEach(group => {
+      html += `
+        <div class="srow">
+          <span>
+            ${group.name}
+          </span>
+          <span class="qty">
+            ${fmt(group.total)}
+          </span>
+        </div>
+      `;
+    });
+  html += `
+    <div class="stotal">
+      <span>Total</span>
+      <span>
+        ${fmt(
+          groups.reduce(
+            (sum,group) =>
+              sum + group.total,
+            0
+          )
+        )}
+      </span>
+    </div>
+  `;
+  element.innerHTML =
+    html;
+}
+/* =========================================================
+   FILTER STATUS
+   ========================================================= */
+function updateFilterStatus(){
+  const hub =
+    document.getElementById(
+      "hubFilter"
+    ).value;
+  const crop =
+    document.getElementById(
+      "cropFilter"
+    ).value;
+  const ranking =
+    document.getElementById(
+      "rankingFilter"
+    ).value;
+  const messages = [];
+  if(hub){
+    messages.push(
+      "Hub: " + hub
+    );
+  }
+  if(crop){
+    messages.push(
+      "Crop: " + crop
+    );
+  }
+  if(ranking !== "all"){
+    messages.push(
+      "Top " + ranking
+    );
+  }
+  const status =
+    document.getElementById(
+      "filterStatus"
+    );
+  status.textContent =
+    messages.length
+      ? "Active: " +
+        messages.join(" | ")
+      : "Showing all data";
+}
+/* =========================================================
+   KEEP CONTEXT BOUNDARIES VISIBLE
+   ========================================================= */
+function refreshContextBoundaries(){
+  [
+    countryBoundaryLayer,
+    hubBoundaryLayer,
+    regionBoundaryLayer,
+    catchmentBoundaryLayer
+  ].forEach(layer => {
+    map.removeLayer(
+      layer
+    );
+  });
+  /*
+     Country and Hub boundaries are
+     always displayed.
+  */
+  if(
+    countryBoundaryLayer
+  ){
+    countryBoundaryLayer.addTo(
+      map
+    );
+  }
+  if(
+    hubBoundaryLayer
+  ){
+    hubBoundaryLayer.addTo(
+      map
+    );
+  }
+}
+/* =========================================================
+   FILTER DATA
+   ========================================================= */
+function renderFilteredData(){
+  const selectedHub =
+    document.getElementById(
+      "hubFilter"
+    ).value;
+  const selectedCrop =
+    document.getElementById(
+      "cropFilter"
+    ).value;
+  const ranking =
+    document.getElementById(
+      "rankingFilter"
+    ).value;
+  /* Filter rows */
+  filteredRows =
+    currentRows.filter(row => {
+      const hubMatch =
+        !selectedHub ||
+        row.hub === selectedHub;
+      const cropMatch =
+        !selectedCrop ||
+        row.crop === selectedCrop;
+      return (
+        hubMatch &&
+        cropMatch
+      );
+    });
+  /* Rebuild points */
+  buyingPoints =
+    buildFromRows(
+      filteredRows
+    );
+  /* If crop selected,
+     retain only selected crop */
+  if(selectedCrop){
+    buyingPoints.forEach(point => {
+      point.crops =
+        point.crops.filter(
+          crop =>
+            crop.crop ===
+            selectedCrop
+        );
+    });
+  }
+  buyingPoints =
+    buyingPoints.filter(
+      point =>
+        pointTotal(point) > 0
+    );
+  /* Ranking */
+  if(ranking !== "all"){
+    buyingPoints.sort(
+      (a,b) =>
+        pointTotal(b) -
+        pointTotal(a)
+    );
+    buyingPoints =
+      buyingPoints.slice(
+        0,
+        Number(ranking)
+      );
+  }
+  /* Groups */
+  byCatchment =
+    groupBy(
+      buyingPoints,
+      point =>
+        point.catchment
+    );
+  byHub =
+    groupBy(
+      buyingPoints,
+      point =>
+        point.hub
+    );
+  byRegion =
+    groupBy(
+      buyingPoints,
+      point =>
+        point.region
+    );
+  grandTotal =
+    buyingPoints.reduce(
+      (sum,point) =>
+        sum +
+        pointTotal(point),
+      0
+    );
+  /* Counters */
+  document.getElementById(
+    "countPoints"
+  ).textContent =
+    buyingPoints.length;
+  document.getElementById(
+    "countCatchments"
+  ).textContent =
+    byCatchment.length;
+  document.getElementById(
+    "countHubs"
+  ).textContent =
+    byHub.length;
+  document.getElementById(
+    "countRegions"
+  ).textContent =
+    byRegion.length;
+  document.getElementById(
+    "grandTotal"
+  ).textContent =
+    buyingPoints.length
+      ? fmt(grandTotal) +
+        " Kgs"
+      : "-";
+  /* Remove operational layers */
+  [
+    pointsLayer,
+    catchmentLayer,
+    hubLayer,
+    regionLayer
+  ].forEach(layer => {
+    layer.clearLayers();
+    map.removeLayer(
+      layer
+    );
+  });
+  /* Build operational layers */
+  pointsLayer =
+    buildPointsLayer();
+  catchmentLayer =
+    buildLevelLayer(
+      byCatchment,
+      "catchment",
+      "#6E8C5D"
+    );
+  hubLayer =
+    buildLevelLayer(
+      byHub,
+      "hub",
+      "#3F5B3D"
+    );
+  regionLayer =
+    buildLevelLayer(
+      byRegion,
+      "region",
+      "#9A4B2E"
+    );
+  updateFilterStatus();
+  setActive(
+    activeKey
+  );
+  /*
+     If a hub is selected,
+     zoom to that hub.
+  */
+  if(selectedHub){
+    setTimeout(
+      zoomToSelectedHub,
+      100
+    );
+  }
+}
+/* =========================================================
+   RENDER ALL
+   ========================================================= */
+function renderAll(){
+  buyingPoints =
+    buildFromRows(
+      currentRows
+    );
+  byCatchment =
+    groupBy(
+      buyingPoints,
+      point =>
+        point.catchment
+    );
+  byHub =
+    groupBy(
+      buyingPoints,
+      point =>
+        point.hub
+    );
+  byRegion =
+    groupBy(
+      buyingPoints,
+      point =>
+        point.region
+    );
+  grandTotal =
+    buyingPoints.reduce(
+      (sum,point) =>
+        sum +
+        pointTotal(point),
+      0
+    );
+  /* Counters */
+  document.getElementById(
+    "countPoints"
+  ).textContent =
+    buyingPoints.length;
+  document.getElementById(
+    "countCatchments"
+  ).textContent =
+    byCatchment.length;
+  document.getElementById(
+    "countHubs"
+  ).textContent =
+    byHub.length;
+  document.getElementById(
+    "countRegions"
+  ).textContent =
+    byRegion.length;
+  document.getElementById(
+    "grandTotal"
+  ).textContent =
+    buyingPoints.length
+      ? fmt(grandTotal) +
+        " Kgs"
+      : "-";
+  /* Remove existing layers */
+  [
+    countryBoundaryLayer,
+    hubBoundaryLayer,
+    regionBoundaryLayer,
+    catchmentBoundaryLayer,
+    pointsLayer,
+    catchmentLayer,
+    hubLayer,
+    regionLayer
+  ].forEach(layer => {
+    layer.clearLayers();
+    map.removeLayer(
+      layer
+    );
+  });
+  /* Rebuild context boundaries */
+  countryBoundaryLayer =
+    buildCountryBoundary();
+  hubBoundaryLayer =
+    buildHubBoundaryLayer();
+  regionBoundaryLayer =
+    buildRegionBoundaryLayer();
+  catchmentBoundaryLayer =
+    buildCatchmentBoundaryLayer();
+  /* Rebuild data layers */
+  pointsLayer =
+    buildPointsLayer();
+  catchmentLayer =
+    buildLevelLayer(
+      byCatchment,
+      "catchment",
+      "#6E8C5D"
+    );
+  hubLayer =
+    buildLevelLayer(
+      byHub,
+      "hub",
+      "#3F5B3D"
+    );
+  regionLayer =
+    buildLevelLayer(
+      byRegion,
+      "region",
+      "#9A4B2E"
+    );
+  /* Context boundaries */
+  countryBoundaryLayer.addTo(
+    map
+  );
+  hubBoundaryLayer.addTo(
+    map
+  );
+  /* Current data view */
+  setActive(
+    activeKey
+  );
+  updateFilterStatus();
+}
+/* =========================================================
+   FILTER DROPDOWNS
+   ========================================================= */
+function populateFilters(){
+  const hubSelect =
+    document.getElementById(
+      "hubFilter"
+    );
+  const cropSelect =
+    document.getElementById(
+      "cropFilter"
+    );
+  const hubs =
+    [
+      ...new Set(
+        currentRows
+          .map(row => row.hub)
+          .filter(Boolean)
+      )
+    ].sort();
+  const crops =
+    [
+      ...new Set(
+        currentRows
+          .map(row => row.crop)
+          .filter(Boolean)
+      )
+    ].sort();
+  hubSelect.innerHTML =
+    `<option value="">
+       All Hubs
+     </option>`;
+  cropSelect.innerHTML =
+    `<option value="">
+       All Crops
+     </option>`;
+  hubs.forEach(hub => {
+    const option =
+      document.createElement(
+        "option"
+      );
+    option.value =
+      hub;
+    option.textContent =
+      hub;
+    hubSelect.appendChild(
+      option
+    );
+  });
+  crops.forEach(crop => {
+    const option =
+      document.createElement(
+        "option"
+      );
+    option.value =
+      crop;
+    option.textContent =
+      crop;
+    cropSelect.appendChild(
+      option
+    );
+  });
+}
+/* =========================================================
+   ACTIVE VIEW
+   ========================================================= */
+const buttons = {
+  points:
+    document.getElementById(
+      "btnPoints"
+    ),
+  catchment:
+    document.getElementById(
+      "btnCatchment"
+    ),
+  hub:
+    document.getElementById(
+      "btnHub"
+    ),
+  region:
+    document.getElementById(
+      "btnRegion"
+    )
+};
+function setActive(key){
+  activeKey =
+    key;
+  Object.values(buttons)
+    .forEach(button => {
+      button.classList.remove(
+        "active"
+      );
+    });
+  buttons[key]
+    .classList.add(
+      "active"
+    );
+  [
+    pointsLayer,
+    catchmentLayer,
+    hubLayer,
+    regionLayer
+  ].forEach(layer => {
+    map.removeLayer(
+      layer
+    );
+  });
+  if(key === "points"){
+    pointsLayer.addTo(
+      map
+    );
+  }
+  if(key === "catchment"){
+    catchmentLayer.addTo(
+      map
+    );
+  }
+  if(key === "hub"){
+    hubLayer.addTo(
+      map
+    );
+  }
+  if(key === "region"){
+    regionLayer.addTo(
+      map
+    );
+  }
+  /*
+     Re-add country and hub
+     context boundaries so they
+     stay visible.
+  */
+  countryBoundaryLayer.addTo(
+    map
+  );
+  hubBoundaryLayer.addTo(
+    map
+  );
+  renderSummary();
+}
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+buttons.points.onclick =
+  () => setActive("points");
+buttons.catchment.onclick =
+  () => setActive("catchment");
+buttons.hub.onclick =
+  () => setActive("hub");
+buttons.region.onclick =
+  () => setActive("region");
+/* =========================================================
+   RECENTER
+   ========================================================= */
+function recenterOnData(){
+  if(
+    buyingPoints.length === 0
+  ){
+    return;
+  }
+  const bounds =
+    L.latLngBounds(
+      buyingPoints.map(
+        point => [
+          point.lat,
+          point.lon
+        ]
+      )
+    );
+  if(bounds.isValid()){
+    map.fitBounds(
+      bounds,
+      {
+        padding:[30,30]
+      }
+    );
+  }
+}
+/* =========================================================
+   FILTER EVENTS
+   ========================================================= */
+document
+  .getElementById(
+    "hubFilter"
+  )
+  .addEventListener(
+    "change",
+    renderFilteredData
+  );
+document
+  .getElementById(
+    "cropFilter"
+  )
+  .addEventListener(
+    "change",
+    renderFilteredData
+  );
+document
+  .getElementById(
+    "rankingFilter"
+  )
+  .addEventListener(
+    "change",
+    renderFilteredData
+  );
+document
+  .getElementById(
+    "clearFilters"
+  )
+  .addEventListener(
+    "click",
+    () => {
+      document.getElementById(
+        "hubFilter"
+      ).value = "";
+      document.getElementById(
+        "cropFilter"
+      ).value = "";
+      document.getElementById(
+        "rankingFilter"
+      ).value = "all";
+      filteredRows =
+        currentRows.slice();
+      renderAll();
+      setTimeout(
+        zoomToCountry,
+        100
+      );
+    }
+  );
+/* =========================================================
+   CSV PARSER
+   ========================================================= */
+function parseCsvRows(text){
+  const results =
+    Papa.parse(
+      text,
+      {
+        header:true,
+        skipEmptyLines:true
+      }
+    );
+  const headers =
+    results.meta.fields || [];
+  const missing =
+    REQUIRED.filter(
+      column =>
+        !headers.includes(
+          column
+        )
+    );
+  if(missing.length > 0){
+    throw new Error(
+      "Missing column(s): " +
+      missing.join(", ")
+    );
+  }
+  const rows =
+    results.data.filter(
+      row =>
+        row.name &&
+        row.lat &&
+        row.lon
+    );
+  if(rows.length === 0){
+    throw new Error(
+      "No valid rows found in CSV."
+    );
+  }
+  return rows;
+}
+/* =========================================================
+   MANUAL CSV
+   ========================================================= */
+const statusEl =
+  document.getElementById(
+    "status"
+  );
+const sourceLine =
+  document.getElementById(
+    "sourceLine"
+  );
+const uploadBox =
+  document.getElementById(
+    "uploadBox"
+  );
+document
+  .getElementById(
+    "csvInput"
+  )
+  .addEventListener(
+    "change",
+    function(event){
+      const file =
+        event.target.files[0];
+      if(!file){
+        return;
+      }
+      const reader =
+        new FileReader();
+      reader.onload =
+        function(event){
+          try{
+            currentRows =
+              parseCsvRows(
+                event.target.result
+              );
+            populateFilters();
+            renderAll();
+            statusEl.className =
+              "status ok";
+            statusEl.textContent =
+              `Loaded ${
+                currentRows.length
+              } rows from uploaded CSV → ${
+                buyingPoints.length
+              } buying points.`;
+            setTimeout(
+              zoomToCountry,
+              100
+            );
+          }
+          catch(error){
+            statusEl.className =
+              "status err";
+            statusEl.textContent =
+              error.message;
+          }
+        };
+      reader.readAsText(
+        file
+      );
+    }
+  );
+/* =========================================================
+   MANUAL GEOJSON
+   ========================================================= */
+document
+  .getElementById(
+    "geoInput"
+  )
+  .addEventListener(
+    "change",
+    function(event){
+      const file =
+        event.target.files[0];
+      if(!file){
+        return;
+      }
+      const reader =
+        new FileReader();
+      reader.onload =
+        function(event){
+          try{
+            boundariesData =
+              JSON.parse(
+                event.target.result
+              );
+            renderAll();
+            statusEl.className =
+              "status ok";
+            statusEl.textContent =
+              "Boundaries file loaded.";
+            setTimeout(
+              zoomToCountry,
+              100
+            );
+          }
+          catch(error){
+            statusEl.className =
+              "status err";
+            statusEl.textContent =
+              "Could not parse GeoJSON: " +
+              error.message;
+          }
+        };
+      reader.readAsText(
+        file
+      );
+    }
+  );
+/* =========================================================
+   AUTO LOAD FROM REPOSITORY
+   ========================================================= */
+async function autoLoad(){
+  try{
+    const response =
+      await fetch(
+        "data/receipts.csv"
+      );
+    if(!response.ok){
+      throw new Error(
+        "receipts.csv not reachable"
+      );
+    }
+    const text =
+      await response.text();
+    currentRows =
+      parseCsvRows(
+        text
+      );
+    populateFilters();
+    /* Load boundaries */
+    try{
+      const boundaryResponse =
+        await fetch(
+          "data/boundaries.geojson"
+        );
+      if(
+        boundaryResponse.ok
+      ){
+        boundariesData =
+          await boundaryResponse.json();
+      }
+    }
+    catch(error){
+      boundariesData =
+        null;
+    }
+    renderAll();
+    sourceLine.textContent =
+      "Auto-loaded from repo data files";
+    statusEl.className =
+      "status ok";
+    statusEl.textContent =
+      `Loaded ${
+        currentRows.length
+      } rows from data/receipts.csv` +
+      (
+        boundariesData
+          ? " and data/boundaries.geojson."
+          : " (no boundaries.geojson found — using bubbles)."
+      );
+    uploadBox.classList.add(
+      "hidden"
+    );
+    /* Zoom to country */
+    setTimeout(
+      zoomToCountry,
+      200
+    );
+  }
+  catch(error){
+    sourceLine.textContent =
+      "Manual upload mode";
+    statusEl.className =
+      "status pending";
+    statusEl.textContent =
+      "Could not auto-load data/receipts.csv. " +
+      "Upload the CSV manually below, or serve the folder using a local server.";
+    renderAll();
+  }
+}
+/* =========================================================
+   START
+   ========================================================= */
+autoLoad();
+</script>
+</body>
+</html>
