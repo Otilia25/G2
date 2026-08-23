@@ -1,0 +1,464 @@
+name,lat,lon,region,hub,catchment,crop,qty
+Adrian Chuulu Home,-14.51166337,29.11335841,Kapiri,Likumbi,Likumbi,Groundnut,751.00
+Adrian Chuulu Home,-14.51166337,29.11335841,Kapiri,Likumbi,Likumbi,Soy Bean,"35,547.00"
+Agripa Lombe - Musungu,-10.1488532,29.7542039,Northern,Kawambwa,Kawambwa,Navy Bean,"19,761.00"
+Agripa Lombe - Musungu,-10.1488532,29.7542039,Northern,Kawambwa,Kawambwa,Sugar bean,"3,721.00"
+Aitana BP,-13.7448867,32.2494633,Kasenengwa,Kasenengwa,Ng'ongwe,Cowpea,299.00
+Aitana BP,-13.7448867,32.2494633,Kasenengwa,Kasenengwa,Ng'ongwe,Soy Bean,"39,829.00"
+Aitana BP,-13.7448867,32.2494633,Kasenengwa,Kasenengwa,Ng'ongwe,Sunflower,88.00
+Aitana BP,-13.7448867,32.2494633,Kasenengwa,Kasenengwa,Ng'ongwe,Sunnhemp,0.00
+Albert Musonda - Musundu,-10.027736,29.8969394,Northern,Kawambwa,Kawambwa,Navy Bean,"10,608.00"
+Albert Musonda - Musundu,-10.027736,29.8969394,Northern,Kawambwa,Kawambwa,Sugar bean,"3,172.00"
+Aliel,-13.89655,32.15112,Katete,Katete-Thiwi,Thiwi,Soy Bean,"14,100.00"
+Amon Phiri - Msokosela,-14.013029,32.540957,Chadiza,Chadiza East,Chadiza East B,Soy Bean,"21,123.00"
+Amon Phiri - Msokosela,-14.013029,32.540957,Chadiza,Chadiza East,Chadiza East B,Sunflower,150.00
+Amon Phiri - Msokosela,-14.013029,32.540957,Chadiza,Chadiza East,Chadiza East B,Sunnhemp,509.00
+Atison Chimawe Home,-14.44359,28.99267,Kapiri,Likumbi,Likumbi,Groundnut,"1,872.00"
+Atison Chimawe Home,-14.44359,28.99267,Kapiri,Likumbi,Likumbi,Soy Bean,"35,488.00"
+Baza farm,-12.077042,32.932215,Chipangali,Chasefu,Chasefu,Groundnut,"5,509.00"
+Baza farm,-12.077042,32.932215,Chipangali,Chasefu,Chasefu,Soy Bean,"1,028.00"
+Beatrice Nyirongo - Chasamwa,-12.18498,33.089649,Chipangali,Nkhanga,Nkhanga,Soy Bean,0.00
+BERNARD  MATOKA,-12.2374244,25.5705138,North-Western,Mukumbi,Mukumbi,Sugar bean,875.00
+Blessed SNV BBP,-12.50569,33.402329,Chipangali,Chasefu,KAMBALE,Groundnut,"1,129.00"
+Brasho,-13.476525,32.299009,Chipangali,Mphomwa,Mkowe,Soy Bean,"9,300.00"
+Bulking Center,-10.447188,30.122499,Northern,Luwingu,Luwingu B,Navy Bean,"2,084.00"
+Bulking Center,-10.447188,30.122499,Northern,Luwingu,Luwingu B,Sugar bean,"23,529.00"
+Buyanshi,-10.01527,29.95746,Northern,Lunte,Lunte C,Navy Bean,450.00
+Buyantanshi,-10.01527,29.98746,Northern,Lunte,Lunte C,Navy Bean,"11,625.00"
+Buyantanshi,-10.01527,29.98746,Northern,Lunte,Lunte C,Sugar bean,"1,794.00"
+Bwanga BBP Shed,-10.36534,30.08668,Northern,Luwingu,Luwingu A,Navy Bean,"4,865.00"
+Bwanga BBP Shed,-10.36534,30.08668,Northern,Luwingu,Luwingu A,Sugar bean,"7,371.00"
+Catherine Bwalya - Nkandabana,-9.95542,29.96278,Northern,Lunte,Lunte C,Navy Bean,"10,604.00"
+Catherine Bwalya - Nkandabana,-9.95542,29.96278,Northern,Lunte,Lunte C,Sugar bean,"1,319.00"
+Chadiza Boma Aggregation Shed,-14.067541,32.445083,Chadiza,Chadiza East,Chadiza East B,Sunnhemp,233.00
+Chalimbana,-13.782385,31.994883,Katete,Katete-Thiwi,Thiwi,Soy Bean,"8,484.00"
+Chamoto,-13.362562,32.619177,Chipangali,Chinunda,Chitandika,Groundnut,"1,269.00"
+Chamoto,-13.362562,32.619177,Chipangali,Chinunda,Chitandika,Soy Bean,"27,669.00"
+Champhero,-12.186808,33.00132,Chipangali,Nkhanga,Nkhanga,Groundnut,"1,440.00"
+Chanda BBP,-10.2856883,30.1484883,Northern,Luwingu,Luwingu A,Navy Bean,"3,152.00"
+Chanda BBP,-10.2856883,30.1484883,Northern,Luwingu,Luwingu A,Sugar bean,"11,408.00"
+Chanjoka,-14.23422,31.900375,Katete,Chanjoka-Kameta,Katete B,Soy Bean,"10,462.00"
+Chankomo,-13.8470175,29.2137344,Kapiri,Mpula 1,Mpula 1,Groundnut,"1,024.00"
+Chankomo,-13.8470175,29.2137344,Kapiri,Mpula 1,Mpula 1,Soy Bean,"159,524.00"
+Chaola,-13.437677,32.472151,Chipangali,Mnukwa,Mnukwa,Groundnut,262.00
+Chaola,-13.437677,32.472151,Chipangali,Mnukwa,Mnukwa,Soy Bean,"57,670.00"
+Chaola Shed,-13.6176836,32.0810814,Kasenengwa,Kasenengwa,Mzapawi,Cowpea,19.00
+Chaola Shed,-13.6176836,32.0810814,Kasenengwa,Kasenengwa,Mzapawi,Groundnut,"2,139.00"
+Chaola Shed,-13.6176836,32.0810814,Kasenengwa,Kasenengwa,Mzapawi,Soy Bean,"33,782.00"
+Chaola Shed,-13.6176836,32.0810814,Kasenengwa,Kasenengwa,Mzapawi,Sunnhemp,11.00
+Chasamwa,-12.183159,33.093865,Chipangali,Nkhanga,Nkhanga,Groundnut,"2,760.00"
+Chasamwa,-12.183159,33.093865,Chipangali,Nkhanga,Nkhanga,Soy Bean,405.00
+Chenda Eka,-10.0621483,30.211667,Northern,Lunte,Lunte B,Navy Bean,"20,022.00"
+Chenda Eka,-10.0621483,30.211667,Northern,Lunte,Lunte B,Sugar bean,"18,398.00"
+Chenda Eka,-10.0621483,30.211667,Northern,Lunte,Lunte C,Navy Bean,150.00
+Chenda Eka,-10.0621483,30.211667,Northern,Lunte,Lunte D,Navy Bean,120.00
+Chiguya,-13.829309,32.198951,Kasenengwa,Kasenengwa,Kwenje A,Soy Bean,"23,137.00"
+Chikaya,-10.4476269,29.2497619,Northern,Chipili,Chipili,Navy Bean,"9,456.00"
+Chikaya,-10.4476269,29.2497619,Northern,Chipili,Chipili,Sugar bean,"2,678.00"
+Chikoba,-13.408986,32.0851814,Chipangali,Mphomwa,Chisengu,Soy Bean,"24,700.00"
+Chikokola,-13.372095,32.4114,Chipangali,Mnukwa,Mnukwa,Groundnut,792.00
+Chikokola,-13.372095,32.4114,Chipangali,Mnukwa,Mnukwa,Soy Bean,"41,950.00"
+Chikoti BBP,-10.24882266,30.05054791,Northern,Luwingu,Luwingu A,Sugar bean,"10,174.00"
+Chikumbe,-13.49005,32.378628,Chipangali,Mphomwa,Mkowe,Soy Bean,"8,532.00"
+Chikungu farms,-13.787768,32.21976,Kasenengwa,Kasenengwa,Kwenje B,Soy Bean,"51,228.00"
+Chikungu farms,-13.787768,32.21976,Kasenengwa,Kasenengwa,Kwenje B,Sunnhemp,27.00
+Chikuyu,-12.099484,33.027034,Chipangali,Nkhanga,Nkhanga,Groundnut,"11,096.00"
+Chikuyu,-12.099484,33.027034,Chipangali,Nkhanga,Nkhanga,Soy Bean,"2,658.00"
+Chikwa,-14.10616,32.0304,Katete,Chanjoka-Kameta,Katete A,Soy Bean,"6,940.00"
+Chikwanda,-9.4149615,31.5164642,Northern,Senga Hill,Kavumbo,Sugar bean,"18,114.00"
+Chilale,-13.422551,32.355506,Chipangali,Mphomwa,Kamwanjiri,Soy Bean,"18,175.00"
+Chilambo,-13.176365,31.948562,Chipangali,Mphomwa,Chisengu,Soy Bean,"9,597.00"
+Chilangwa,-9.5896519,31.2910787,Northern,Senga Hill,Senga,Navy Bean,"5,803.00"
+Chilangwa,-9.5896519,31.2910787,Northern,Senga Hill,Senga,Sugar bean,7.00
+Chilasa,-14.251127,31.9550917,Katete,Chanjoka-Kameta,Katete B,Soy Bean,"4,105.00"
+Chilingondi,-14.097302,32.111377,Katete,Chanjoka-Kameta,Katete A,Soy Bean,"9,163.00"
+Chilwa,-8.9393847,31.072499,Northern,Vyamba,Vyamba,Navy Bean,909.00
+Chilwa,-8.9393847,31.072499,Northern,Vyamba,Vyamba,Sugar bean,"36,612.00"
+Chimasula,-13.7433183,31.951325,Katete,Katete-Thiwi,Thiwi,Soy Bean,"46,296.00"
+Chimwala,-13.226456,32.660201,Chipangali,Chinunda,Chitandika,Groundnut,446.00
+Chimwala,-13.226456,32.660201,Chipangali,Chinunda,Chitandika,Soy Bean,"10,694.00"
+Chindo Cooperative Sheds,-9.3195803,31.7014065,Northern,Senga Hill,Kavumbo,Sugar bean,"16,950.00"
+Chingaipe,-13.525843,32.430805,Chipangali,Mphomwa,Mkowe,Groundnut,713.00
+Chingaipe,-13.525843,32.430805,Chipangali,Mphomwa,Mkowe,Soy Bean,"22,700.00"
+Chinkhombe SNV,-13.947637,31.964392,Katete,Chanjoka-Kameta,Katete C,Soy Bean,"3,630.00"
+Chipanda,-9.2563105,31.3025094,Northern,Senga Hill,Senga,Navy Bean,"6,851.00"
+Chipanda,-9.2563105,31.3025094,Northern,Senga Hill,Senga,Sugar bean,"8,881.00"
+Chipemba,-10.1057741,30.1969933,Northern,Luwingu,Luwingu A,Navy Bean,"8,303.00"
+Chipemba,-10.1057741,30.1969933,Northern,Luwingu,Luwingu A,Sugar bean,"6,965.00"
+Chipembere Shed,-13.7922248,32.241459,Kasenengwa,Kasenengwa,Mzapawi,Groundnut,109.00
+Chipembere Shed,-13.7922248,32.241459,Kasenengwa,Kasenengwa,Mzapawi,Soy Bean,"24,984.00"
+Chipembere Shed,-13.7922248,32.241459,Kasenengwa,Kasenengwa,Mzapawi,Sunnhemp,0.00
+Chisanga,-10.0129666,30.3883827,Northern,Lunte,Lunte D,Navy Bean,"6,777.00"
+Chisanga,-10.0129666,30.3883827,Northern,Lunte,Lunte D,Sugar bean,"8,672.00"
+Chisengu,-13.316795,32.226257,Chipangali,Mphomwa,Chisengu,Groundnut,"1,731.00"
+Chisengu,-13.316795,32.226257,Chipangali,Mphomwa,Chisengu,Soy Bean,"45,674.00"
+Chitasha,-10.0597651,30.210818,Northern,Lunte,Lunte B,Navy Bean,"9,404.00"
+Chitasha,-10.0597651,30.210818,Northern,Lunte,Lunte B,Sugar bean,"11,921.00"
+Chiteu Shed,-13.7150567,32.3889967,Kasenengwa,Kasenengwa,Kasenengwa,Cowpea,17.00
+Chiteu Shed,-13.7150567,32.3889967,Kasenengwa,Kasenengwa,Kasenengwa,Groundnut,634.00
+Chiteu Shed,-13.7150567,32.3889967,Kasenengwa,Kasenengwa,Kasenengwa,Soy Bean,"28,505.00"
+Chiteu Shed,-13.7150567,32.3889967,Kasenengwa,Kasenengwa,Kasenengwa,Sunnhemp,22.00
+chitoshi Davies,-10.1049754,30.1991785,Northern,Lunte,Lunte B,Navy Bean,"14,491.00"
+chitoshi Davies,-10.1049754,30.1991785,Northern,Lunte,Lunte B,Sugar bean,"26,450.00"
+Chitoshi Shed,-10.1048117,30.199158,Northern,Lunte,Lunte B,Navy Bean,"11,961.00"
+Chitoshi Shed,-10.1048117,30.199158,Northern,Lunte,Lunte B,Sugar bean,"16,887.00"
+Chitwa West,-14.4909,24.86635,Western,Mulambwa,Mulambwa North,Groundnut,"12,620.00"
+Chitwa West,-14.4909,24.86635,Western,Mulambwa,Mulambwa North,Soy Bean,"1,520.00"
+Chiyende Yende,-12.295627,33.040732,Chipangali,Nkhanga,Nkhanga,Groundnut,"4,893.00"
+Chizingizi,-12.155282,32.994042,Chipangali,Nkhanga,Nkhanga,Groundnut,"2,024.00"
+Chungu Shed,-13.696365,32.24466,Kasenengwa,Kasenengwa,Ng'ongwe,Cowpea,48.00
+Chungu Shed,-13.696365,32.24466,Kasenengwa,Kasenengwa,Ng'ongwe,Soy Bean,"31,202.00"
+Chungu Shed,-13.696365,32.24466,Kasenengwa,Kasenengwa,Ng'ongwe,Sunflower,73.00
+Chungu Shed,-13.696365,32.24466,Kasenengwa,Kasenengwa,Ng'ongwe,Sunnhemp,0.00
+Clever Byendo Home,-14.609342,28.8263608,Kapiri,Likumbi,Likumbi,Groundnut,"5,414.00"
+Clever Byendo Home,-14.609342,28.8263608,Kapiri,Likumbi,Likumbi,Soy Bean,"77,647.00"
+DACO Shed,-9.95901,30.4292,Northern,Lunte,Lunte B,Navy Bean,400.00
+DACO Shed,-9.95901,30.4292,Northern,Lunte,Lunte D,Navy Bean,"16,291.00"
+DACO Shed,-9.95901,30.4292,Northern,Lunte,Lunte D,Sugar bean,"28,820.00"
+Doris Mulenga - Lunte,-10.2125961,30.230826,Northern,Lunte,Lunte B,Navy Bean,"6,716.00"
+Doris Mulenga - Lunte,-10.2125961,30.230826,Northern,Lunte,Lunte B,Sugar bean,"14,680.00"
+Dowoko,-12.206067,33.064651,Chipangali,Nkhanga,Nkhanga,Groundnut,"8,956.00"
+Elijah,-12.165902,32.92437,Chipangali,Nkhanga,Nkhanga,Groundnut,"2,096.00"
+Eunice,-14.113242,31.900869,Katete,Chanjoka-Kameta,Katete B,Soy Bean,"11,371.00"
+Evaness Kapemba Home,-14.3632963,28.8839635,Kapiri,Likumbi,Likumbi,Groundnut,"2,625.00"
+Evaness Kapemba Home,-14.3632963,28.8839635,Kapiri,Likumbi,Likumbi,Soy Bean,"21,316.00"
+Fackson Tindiza Home,-14.37634,28.90492,Kapiri,Likumbi,Likumbi,Groundnut,"2,372.00"
+Fackson Tindiza Home,-14.37634,28.90492,Kapiri,Likumbi,Likumbi,Soy Bean,"39,960.00"
+Feni,-13.7360494,32.3084485,Kasenengwa,Kasenengwa,Kasenengwa,Cowpea,124.00
+Feni,-13.7360494,32.3084485,Kasenengwa,Kasenengwa,Kasenengwa,Soy Bean,"16,285.00"
+Feni,-13.7360494,32.3084485,Kasenengwa,Kasenengwa,Kasenengwa,Sunflower,0.00
+Fikunyu Community,-10.417535,30.1820917,Northern,Luwingu,Luwingu A,Navy Bean,"8,708.00"
+Fikunyu Community,-10.417535,30.1820917,Northern,Luwingu,Luwingu A,Sugar bean,"17,273.00"
+Francis Musonda - Lunte,-10.2018656,30.230826,Northern,Lunte,Lunte B,Navy Bean,"22,745.00"
+Francis Musonda - Lunte,-10.2018656,30.230826,Northern,Lunte,Lunte B,Sugar bean,"21,737.00"
+Gift Muyaba - Kasonde,-11.912434,25.62424,North-Western,Mukumbi,Mukumbi,Sugar bean,"12,292.00"
+Gift Mweeta Home,-14.4616649,28.8825986,Kapiri,Likumbi,Likumbi,Groundnut,916.00
+Gift Mweeta Home,-14.4616649,28.8825986,Kapiri,Likumbi,Likumbi,Soy Bean,"85,070.00"
+Gulani 1,-15.3,28.1,Test Region,// Test District,// Test Camp 1,Soy Bean,250.00
+Guma,-14.209733,31.973616,Katete,Chanjoka-Kameta,Katete A,Soy Bean,"4,554.00"
+Gundu,-12.155282,32.994042,Chipangali,Nkhanga,Nkhanga,Groundnut,"1,779.00"
+Gundu,-12.155282,32.994042,Chipangali,Nkhanga,Nkhanga,Soy Bean,275.00
+Ignatius Mwenya - Kasonde,-10.1008982,29.9079921,Northern,Kawambwa,Kawambwa,Navy Bean,"24,195.00"
+Ignatius Mwenya - Kasonde,-10.1008982,29.9079921,Northern,Kawambwa,Kawambwa,Sugar bean,"4,638.00"
+Jackson Mulenga - Musundu,-10.0140762,29.8947691,Northern,Kawambwa,Kawambwa,Navy Bean,"7,981.00"
+Jackson Mulenga - Musundu,-10.0140762,29.8947691,Northern,Kawambwa,Kawambwa,Sugar bean,715.00
+Jekapu,-8.996958,31.057197,Northern,Vyamba,Vyamba,Navy Bean,570.00
+Jekapu,-8.996958,31.057197,Northern,Vyamba,Vyamba,Sugar bean,"11,986.00"
+John Chongo - Nkandabana,-9.95539,29.96274,Northern,Lunte,Lunte B,Navy Bean,950.00
+John Chongo - Nkandabana,-9.95539,29.96274,Northern,Lunte,Lunte C,Navy Bean,"6,227.00"
+John Chongo - Nkandabana,-9.95539,29.96274,Northern,Lunte,Lunte C,Sugar bean,"1,910.00"
+Kabalachi Shed,-14.25738,24.3644,Western,Kalumwange,Kalumwange North,Groundnut,795.00
+Kabalachi Shed,-14.25738,24.3644,Western,Kalumwange,Kalumwange North,Soy Bean,"59,721.00"
+Kabanga - B,-15.822126,26.9366945,North-Western,Mukumbi,Mukumbi,Sugar bean,"6,841.00"
+Kabishi,-11.9191682,25.4695144,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"1,589.00"
+Kabwela,-10.20336,30.05551,Northern,Lunte,Lunte C,Navy Bean,"15,825.00"
+Kabwela,-10.20336,30.05551,Northern,Lunte,Lunte C,Sugar bean,"2,028.00"
+Kachete-chete,-13.940478,32.536891,Chadiza,Chadiza West,Chadiza West A,Soy Bean,"9,284.00"
+Kachibwe,-10.5953571,30.0913008,Northern,Luwingu,Luwingu B,Navy Bean,200.00
+Kachibwe,-10.5953571,30.0913008,Northern,Luwingu,Luwingu B,Sugar bean,"11,765.00"
+Kachila,-13.6187933,32.1336317,Kasenengwa,Kasenengwa,Kampheta,Soy Bean,"21,813.00"
+Kachila,-13.6187933,32.1336317,Kasenengwa,Kasenengwa,Kampheta,Sunnhemp,11.00
+Kachiwezhi,-12.31814,25.84645,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"2,979.00"
+Kaembe,-10.0740724,30.046556,Northern,Lunte,Lunte C,Navy Bean,"13,150.00"
+Kaembe,-10.0740724,30.046556,Northern,Lunte,Lunte C,Sugar bean,"23,090.00"
+Kafunkha SNV,-14.079377,31.941639,Katete,Chanjoka-Kameta,Katete B,Soy Bean,594.00
+Kagoro,-14.237725,32.071498,Katete,Chanjoka-Kameta,Katete C,Soy Bean,"32,954.00"
+Kagoro 4,-14.237869,32.124016,Katete,Chanjoka-Kameta,Katete C,Soy Bean,"8,044.00"
+Kajeje,-14.20154,24.96588,Western,Kalumwange,Kalumwange South,Groundnut,"1,305.00"
+Kajeje,-14.20154,24.96588,Western,Kalumwange,Kalumwange South,Soy Bean,"14,189.00"
+Kakumba SNV BBP,-12.389009,33.18132,Chipangali,Chasefu,MSUZI,Groundnut,648.00
+Kalemba,-14.085299,32.6445007,Chadiza,Chadiza East,Chadiza East A,Soy Bean,"23,955.00"
+Kalumwange,-14.23983,24.96545,Western,Kalumwange,Kalumwange North,Groundnut,333.00
+Kalumwange,-14.23983,24.96545,Western,Kalumwange,Kalumwange North,Soy Bean,"22,593.00"
+kalumwangwe B,-14.8301097,24.8087126,Western,Kalumwange,Kalumwange North,Groundnut,38.00
+kalumwangwe B,-14.8301097,24.8087126,Western,Kalumwange,Kalumwange North,Soy Bean,"3,468.00"
+Kalundu,-10.2903251,29.387211,Northern,Chipili,Chipili,Navy Bean,"7,062.00"
+Kalundu,-10.2903251,29.387211,Northern,Chipili,Chipili,Sugar bean,"6,944.00"
+Kalyati,-9.28446,31.22429,Northern,Senga Hill,Senga,Navy Bean,"4,768.00"
+Kalyati,-9.28446,31.22429,Northern,Senga Hill,Senga,Sugar bean,"10,730.00"
+Kambale SNV BBP,-12.39488,33.284943,Chipangali,Chasefu,Chasefu,Groundnut,"4,138.00"
+Kambeteka,-11.8571,33.095697,Chipangali,Chasefu,Chasefu,Groundnut,"3,756.00"
+Kambeteka,-11.8571,33.095697,Chipangali,Chasefu,Chasefu,Soy Bean,"2,750.00"
+Kambwata,-13.53264,32.307625,Kasenengwa,Kasenengwa,Mzapawi,Soy Bean,"13,356.00"
+Kamchacha,-14.059294,32.328752,Chadiza,Chadiza West,Chadiza West A,Soy Bean,"10,607.00"
+Kamchacha,-14.059294,32.328752,Chadiza,Chadiza West,Chadiza West A,Sunnhemp,24.00
+Kameta,-14.3491,32.06574,Katete,Chanjoka-Kameta,Katete C,Soy Bean,"12,431.00"
+Kamikolo,-11.934048,25.66842,North-Western,Mukumbi,Mukumbi,Sugar bean,"36,877.00"
+Kamoba,-13.299114,32.6941206,Chipangali,Chinunda,Mafuta,Groundnut,480.00
+Kamoba,-13.299114,32.6941206,Chipangali,Chinunda,Mafuta,Soy Bean,"3,582.00"
+Kamphambe,-14.0529426,32.1382344,Katete,Chanjoka-Kameta,Katete A,Soy Bean,"10,273.00"
+Kamphambe SNV,-14.2759,32.0483,Katete,Chanjoka-Kameta,Katete C,Soy Bean,"3,036.00"
+Kampheta Village,-13.61495,32.081801,Kasenengwa,Kasenengwa,Kampheta,Soy Bean,"2,451.00"
+Kamwanjiri,-13.372645,32.30445,Chipangali,Mphomwa,Kamwanjiri,Soy Bean,"21,000.00"
+Kanabilumbu,-14.3704667,24.9202783,Western,Kalumwange,Kalumwange South,Groundnut,"5,307.00"
+Kanabilumbu,-14.3704667,24.9202783,Western,Kalumwange,Kalumwange South,Soy Bean,"9,628.00"
+Kangombe Shed,-13.9259985,32.2145096,Kasenengwa,Kasenengwa,Pwata,Cowpea,502.00
+Kangombe Shed,-13.9259985,32.2145096,Kasenengwa,Kasenengwa,Pwata,Soy Bean,"52,825.00"
+Kangombe Shed,-13.9259985,32.2145096,Kasenengwa,Kasenengwa,Pwata,Sunflower,282.00
+Kangombe Shed,-13.9259985,32.2145096,Kasenengwa,Kasenengwa,Pwata,Sunnhemp,336.00
+Kankonzhi,-12.244953,25.23228,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"1,230.00"
+Kansasa,-10.521884,30.103466,Northern,Luwingu,Luwingu B,Navy Bean,"1,046.00"
+Kansasa,-10.521884,30.103466,Northern,Luwingu,Luwingu B,Sugar bean,"34,999.00"
+Kanshimba,-10.69369,29.116566,Northern,Chipili,Chipili,Navy Bean,"3,960.00"
+Kanshimba,-10.69369,29.116566,Northern,Chipili,Chipili,Sugar bean,273.00
+Kansomba,-13.73383,32.1957317,Kasenengwa,Kasenengwa,Ng'ongwe,Soy Bean,"21,062.00"
+Kanyikezhi,-11.99872,25.14801,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"7,742.00"
+Kanyikezhi B,-12.06174292,25.16338963,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"5,348.00"
+Kapachi,-14.0867828,32.6290335,Chadiza,Chadiza East,Chadiza East B,Soy Bean,"21,853.00"
+Kapachi,-14.0867828,32.6290335,Chadiza,Chadiza East,Chadiza East B,Sunflower,30.00
+Kapachi,-14.0867828,32.6290335,Chadiza,Chadiza East,Chadiza East B,Sunnhemp,6.00
+Kapenya,-13.490315,32.348467,Chipangali,Mphomwa,Mkowe,Groundnut,391.00
+Kapenya,-13.490315,32.348467,Chipangali,Mphomwa,Mkowe,Soy Bean,"21,125.00"
+Kapilu,-12.0225807,33.1771167,Chipangali,Chasefu,Chasefu,Groundnut,"4,039.00"
+Kapilu,-12.0225807,33.1771167,Chipangali,Chasefu,Chasefu,Soy Bean,25.00
+Kapoli 1,-9.3117489,31.2767635,Northern,Senga Hill,Senga,Navy Bean,"4,072.00"
+Kapoli 1,-9.3117489,31.2767635,Northern,Senga Hill,Senga,Sugar bean,"10,262.00"
+Kapoli 2,-9.3781214,31.2970567,Northern,Senga Hill,Senga,Navy Bean,"4,918.00"
+Kapoli 2,-9.3781214,31.2970567,Northern,Senga Hill,Senga,Sugar bean,"6,206.00"
+Kasambeni,-13.6040517,32.0253717,Kasenengwa,Kasenengwa,Kampheta,Soy Bean,"23,922.00"
+Kasambeni,-13.6040517,32.0253717,Kasenengwa,Kasenengwa,Kampheta,Sunnhemp,15.00
+Kasenengwa Shed,-13.718052,32.322974,Kasenengwa,Kasenengwa,Kasenengwa,Groundnut,91.00
+Kasenengwa Shed,-13.718052,32.322974,Kasenengwa,Kasenengwa,Kasenengwa,Soy Bean,"25,518.00"
+Kasenengwa Shed,-13.718052,32.322974,Kasenengwa,Kasenengwa,Kasenengwa,Sunflower,30.00
+Kasenengwa Shed,-13.718052,32.322974,Kasenengwa,Kasenengwa,Kasenengwa,Sunnhemp,18.00
+Kashambila,-12.26381,25.14149,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"2,735.00"
+Katawa SNV,-14.202283,32.043068,Katete,Chanjoka-Kameta,Katete C,Soy Bean,957.00
+Katongo,-10.09616,30.06171,Northern,Lunte,Lunte C,Navy Bean,"6,740.00"
+Katongo,-10.09616,30.06171,Northern,Lunte,Lunte C,Sugar bean,"6,960.00"
+Katongozola,-14.06308,32.18302,Chadiza,Chadiza West,Chadiza West B,Soy Bean,"24,517.00"
+Katongozola,-14.06308,32.18302,Chadiza,Chadiza West,Chadiza West B,Sunflower,60.00
+Katopola SNV BBP,-12.49244,33.169832,Chipangali,Chasefu,MKOMBA,Groundnut,0.00
+Katulo,-9.0165814,31.0150068,Northern,Vyamba,Vyamba,Navy Bean,539.00
+Katulo,-9.0165814,31.0150068,Northern,Vyamba,Vyamba,Sugar bean,"8,653.00"
+Kaulasisi,-12.191596,32.949467,Chipangali,Nkhanga,Nkhanga,Groundnut,"4,481.00"
+Kaungo Shed,-13.6162617,32.07876,Kasenengwa,Kasenengwa,Kampheta,Soy Bean,"17,298.00"
+Kaungo Shed,-13.6162617,32.07876,Kasenengwa,Kasenengwa,Kampheta,Sunnhemp,14.00
+Kavinaka SNV BBP,-12.354281,32.833372,Chipangali,Chasefu,MKOMBA,Groundnut,"1,724.00"
+Kavumbo,-9.1668822,31.5692065,Northern,Senga Hill,Kavumbo,Sugar bean,"19,196.00"
+Kawalala,-14.200383,31.810275,Katete,Chanjoka-Kameta,Katete B,Soy Bean,"2,450.00"
+Kawaza,-14.184929,32.31027,Chadiza,Chadiza West,Chadiza West B,Soy Bean,"7,195.00"
+Kawene,-13.96067,32.432316,Chadiza,Chadiza West,Chadiza West A,Soy Bean,"21,885.00"
+Kawene,-13.96067,32.432316,Chadiza,Chadiza West,Chadiza West A,Sunflower,60.00
+Kawene,-13.96067,32.432316,Chadiza,Chadiza West,Chadiza West A,Sunnhemp,40.00
+Kawowola SNV BBP,-12.401363,33.008997,Chipangali,Chasefu,KAMBALE,Groundnut,"2,069.00"
+Kayala Phiri - Champhala,-14.26586,31.94742,Katete,Chanjoka-Kameta,Katete B,Soy Bean,"22,713.00"
+Kennedy Mukuka - Nkandabana,-9.95539,29.574615,Northern,Lunte,Lunte C,Navy Bean,"4,390.00"
+Kennedy Mukuka - Nkandabana,-9.95539,29.574615,Northern,Lunte,Lunte C,Sugar bean,250.00
+Kisasa,-12.10945,25.49242,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"4,207.00"
+Kunda Shed,-13.832795,32.231905,Kasenengwa,Kasenengwa,Kwenje A,Soy Bean,"52,694.00"
+Kunda Shed,-13.832795,32.231905,Kasenengwa,Kasenengwa,Kwenje A,Sunflower,253.00
+Kwaba,-13.3518326,32.70736,Chipangali,Chinunda,Mafuta,Groundnut,"1,033.00"
+Kwaba,-13.3518326,32.70736,Chipangali,Chinunda,Mafuta,Soy Bean,"12,130.00"
+Kyanika,-11.917132,25.68034,North-Western,Mukumbi,Mukumbi,Sugar bean,"13,076.00"
+Lameck Katebe Home,-14.50932,28.88596,Kapiri,Likumbi,Likumbi,Groundnut,"1,335.00"
+Lameck Katebe Home,-14.50932,28.88596,Kapiri,Likumbi,Likumbi,Soy Bean,"32,024.00"
+Lolo Bwela BBP,-10.29644,30.07419,Northern,Luwingu,Luwingu A,Navy Bean,"6,519.00"
+Lolo Bwela BBP,-10.29644,30.07419,Northern,Luwingu,Luwingu A,Sugar bean,"11,952.00"
+Lubinga,-12.1696233,25.7218867,North-Western,Mukumbi,Mukumbi,Sugar bean,"2,424.00"
+Lubushi,-10.245081,30.478785,Northern,Lunte,Lunte A,Navy Bean,"14,250.00"
+Lubushi,-10.245081,30.478785,Northern,Lunte,Lunte A,Sugar bean,"7,180.00"
+Lukhalo,-13.415439,32.606768,Chipangali,Mnukwa,Mnukwa,Groundnut,232.00
+Lukhalo,-13.415439,32.606768,Chipangali,Mnukwa,Mnukwa,Soy Bean,"15,761.00"
+lunchu,-13.8766171,28.9090093,Kapiri,Mpula 1,Mpula 1,Groundnut,80.00
+lunchu,-13.8766171,28.9090093,Kapiri,Mpula 1,Mpula 1,Soy Bean,"35,788.00"
+Lunyati,-14.2492533,24.8604883,Western,Kalumwange,Kalumwange North,Groundnut,80.00
+Lunyati,-14.2492533,24.8604883,Western,Kalumwange,Kalumwange North,Soy Bean,"7,598.00"
+Lupososhi,-10.352216,29.475846,Northern,Chipili,Chipili,Navy Bean,"5,067.00"
+Lupososhi,-10.352216,29.475846,Northern,Chipili,Chipili,Sugar bean,"8,754.00"
+Lwenge,-10.1866282,29.9256279,Northern,Kawambwa,Kawambwa,Navy Bean,"7,258.00"
+Lwenge,-10.1866282,29.9256279,Northern,Kawambwa,Kawambwa,Sugar bean,"12,185.00"
+Lyanda,-9.5493917,31.4734267,Northern,Senga Hill,Senga,Navy Bean,"3,030.00"
+Lyanda,-9.5493917,31.4734267,Northern,Senga Hill,Senga,Sugar bean,"8,036.00"
+Lyson Tembo - Champhala,-14.2511315,31.9551481,Katete,Chanjoka-Kameta,Katete A,Soy Bean,"9,801.00"
+Mabanga,-11.996952,25.604533,North-Western,Mukumbi,Mukumbi,Sugar bean,"17,879.00"
+Magamba,-14.2543,31.983383,Katete,Chanjoka-Kameta,Katete A,Soy Bean,"6,233.00"
+Magoboza,-13.319758,32.700155,Chipangali,Chinunda,Mafuta,Groundnut,420.00
+Magoboza,-13.319758,32.700155,Chipangali,Chinunda,Mafuta,Soy Bean,"7,837.00"
+Magomero,-13.689975,32.2013871,Kasenengwa,Kasenengwa,Mulima,Groundnut,184.00
+Magomero,-13.689975,32.2013871,Kasenengwa,Kasenengwa,Mulima,Soy Bean,"63,968.00"
+Magomero,-13.689975,32.2013871,Kasenengwa,Kasenengwa,Mulima,Sunflower,124.00
+Magonde,-11.8571,33.095697,Chipangali,Chasefu,Chasefu,Groundnut,"2,558.00"
+Magonde,-11.8571,33.095697,Chipangali,Chasefu,Chasefu,Soy Bean,883.00
+Malijeni,-13.780695,32.186853,Kasenengwa,Kasenengwa,Kwenje B,Soy Bean,"34,798.00"
+Mangala,-12.031295,25.85955,North-Western,Mukumbi,Mukumbi,Sugar bean,"8,238.00"
+Mangani,-10.10611,30.448562,Northern,Lunte,Lunte A,Navy Bean,"3,900.00"
+Mangani,-10.10611,30.448562,Northern,Lunte,Lunte A,Sugar bean,800.00
+Manyenje,-13.296025,32.54205,Chipangali,Chinunda,Chitandika,Groundnut,40.00
+Manyenje,-13.296025,32.54205,Chipangali,Chinunda,Chitandika,Soy Bean,"4,950.00"
+Manzi BBP,-9.2911,31.55759,Northern,Senga Hill,Kavumbo,Sugar bean,"4,916.00"
+Masala,-13.82771,32.198951,Kasenengwa,Kasenengwa,Kwenje A,Soy Bean,"22,408.00"
+Masala,-13.82771,32.198951,Kasenengwa,Kasenengwa,Kwenje A,Sunflower,300.00
+Masamba,-9.13592,31.3795086,Northern,Senga Hill,Senga,Navy Bean,"22,954.00"
+Masuku,-14.1610562,32.549189,Chadiza,Chadiza East,Chadiza East B,Soy Bean,"11,038.00"
+Masuku,-14.1610562,32.549189,Chadiza,Chadiza East,Chadiza East B,Sunflower,150.00
+Maybin Chanda - Musundu,-10.0113896,29.896769,Northern,Kawambwa,Kawambwa,Navy Bean,"7,097.00"
+Maybin Chanda - Musundu,-10.0113896,29.896769,Northern,Kawambwa,Kawambwa,Sugar bean,"2,609.00"
+Mbale,-14.3852952,24.9046392,Western,Kalumwange,Kalumwange South,Groundnut,"4,602.00"
+Mbale,-14.3852952,24.9046392,Western,Kalumwange,Kalumwange South,Soy Bean,325.00
+Mbinga,-14.0695543,32.271241,Chadiza,Chadiza West,Chadiza West A,Soy Bean,"10,592.00"
+Mbingwa SNV,-14.211882,31.992619,Katete,Chanjoka-Kameta,Katete C,Soy Bean,825.00
+Mbole,-12.11059,25.49094,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"1,797.00"
+Mbole West,-14.2428103,24.9658548,Western,Kalumwange,Kalumwange North,Groundnut,379.00
+Mbole West,-14.2428103,24.9658548,Western,Kalumwange,Kalumwange North,Soy Bean,"17,724.00"
+Mduwi,-13.35421,32.541476,Chipangali,Mnukwa,Mnukwa,Groundnut,92.00
+Mduwi,-13.35421,32.541476,Chipangali,Mnukwa,Mnukwa,Soy Bean,"24,200.00"
+Menga Centre,-10.10581,30.19663,Northern,Luwingu,Luwingu A,Navy Bean,"6,500.00"
+Menga Centre,-10.10581,30.19663,Northern,Luwingu,Luwingu A,Sugar bean,"9,704.00"
+Menga Laishi,-10.105869,30.196125,Northern,Luwingu,Luwingu A,Navy Bean,"12,369.00"
+Menga Laishi,-10.105869,30.196125,Northern,Luwingu,Luwingu A,Sugar bean,"5,879.00"
+Menje Shed,-9.451424,31.4145831,Northern,Senga Hill,Senga,Navy Bean,"3,705.00"
+Menje Shed,-9.451424,31.4145831,Northern,Senga Hill,Senga,Sugar bean,"5,966.00"
+Metallic Shed,-13.6393933,32.3756767,Kasenengwa,Kasenengwa,Katondo,Cowpea,"1,055.00"
+Metallic Shed,-13.6393933,32.3756767,Kasenengwa,Kasenengwa,Katondo,Soy Bean,"42,299.00"
+Metallic Shed,-13.6393933,32.3756767,Kasenengwa,Kasenengwa,Katondo,Sunnhemp,136.00
+Mimbulu,-10.4087161,29.3028569,Northern,Chipili,Chipili,Navy Bean,"6,145.00"
+Mimbulu,-10.4087161,29.3028569,Northern,Chipili,Chipili,Sugar bean,"4,571.00"
+Misambula BBP,-10.4551317,30.22272,Northern,Luwingu,Luwingu A,Sugar bean,"47,652.00"
+Mitawa,-13.787746,32.220014,Kasenengwa,Kasenengwa,Kwenje B,Soy Bean,"15,309.00"
+Mitawa,-13.787746,32.220014,Kasenengwa,Kasenengwa,Kwenje B,Sunflower,90.00
+Mkondo,-13.7165085,32.320495,Kasenengwa,Kasenengwa,Pwata,Soy Bean,"9,768.00"
+mlolo,-14.1850859,32.3103711,Chadiza,Chadiza West,Chadiza West B,Soy Bean,"5,653.00"
+mlolo,-14.1850859,32.3103711,Chadiza,Chadiza West,Chadiza West B,Sunflower,60.00
+Mpalapata Shed,-10.205943,30.351931,Northern,Lunte,Lunte A,Navy Bean,"3,422.00"
+Mpalapata Shed,-10.205943,30.351931,Northern,Lunte,Lunte A,Sugar bean,"18,138.00"
+Mphande,-13.8612683,32.1966733,Katete,Katete-Thiwi,Thiwi,Soy Bean,"35,544.00"
+Mpula Shed,-13.8795633,28.8961717,Kapiri,Mpula 1,Mpula 1,Groundnut,738.00
+Mpula Shed,-13.8795633,28.8961717,Kapiri,Mpula 1,Mpula 1,Soy Bean,"36,933.00"
+Mshulu SNV,-14.1483,31.8578,Katete,Chanjoka-Kameta,Katete B,Soy Bean,"1,815.00"
+Mtaya,-14.01395,32.656823,Chadiza,Chadiza East,Chadiza East A,Soy Bean,"14,965.00"
+Mtaya,-14.01395,32.656823,Chadiza,Chadiza East,Chadiza East A,Sunnhemp,23.00
+Mtelemuka SNV,-14.197402,32.042274,Katete,Chanjoka-Kameta,Katete C,Soy Bean,231.00
+Mtsale SNV,-14.1483,31.8578,Katete,Chanjoka-Kameta,Katete B,Soy Bean,957.00
+Mucheleka BBP,-10.3816833,30.19708,Northern,Luwingu,Luwingu A,Navy Bean,487.00
+Mucheleka BBP,-10.3816833,30.19708,Northern,Luwingu,Luwingu A,Sugar bean,"32,811.00"
+Mukumbi Central,-12.082454,25.779192,North-Western,Mukumbi,Mukumbi,Sugar bean,"3,975.00"
+Mulalila,-14.483875,24.9497733,Western,Mulambwa,Mulambwa South,Groundnut,"1,223.00"
+Mulalila,-14.483875,24.9497733,Western,Mulambwa,Mulambwa South,Soy Bean,"21,333.00"
+Mulenga Mapesa,-10.155105,30.542481,Northern,Lunte,Lunte A,Navy Bean,"8,053.00"
+Mulenga Mapesa,-10.155105,30.542481,Northern,Lunte,Lunte A,Sugar bean,"11,400.00"
+Mulima Village,-13.6461805,32.2340132,Kasenengwa,Kasenengwa,Mulima,Groundnut,178.00
+Mulima Village,-13.6461805,32.2340132,Kasenengwa,Kasenengwa,Mulima,Soy Bean,"65,615.00"
+Mulima Village,-13.6461805,32.2340132,Kasenengwa,Kasenengwa,Mulima,Sunflower,51.00
+Mulima Village,-13.6461805,32.2340132,Kasenengwa,Kasenengwa,Mulima,Sunnhemp,16.00
+Mulokoso,-10.09701,30.07872,Northern,Lunte,Lunte C,Navy Bean,"9,137.00"
+Mulokoso,-10.09701,30.07872,Northern,Lunte,Lunte C,Sugar bean,"1,144.00"
+Mulukuma,-10.1104033,30.3080117,Northern,Lunte,Lunte A,Navy Bean,"3,800.00"
+Mulukuma,-10.1104033,30.3080117,Northern,Lunte,Lunte A,Sugar bean,"19,250.00"
+Mung'anga,-10.5371019,29.156999,Northern,Chipili,Chipili,Navy Bean,"9,529.00"
+Mung'anga,-10.5371019,29.156999,Northern,Chipili,Chipili,Sugar bean,128.00
+Munyukwa,-12.035999,32.963826,Chipangali,Chasefu,Chasefu,Groundnut,"3,947.00"
+Munyukwa,-12.035999,32.963826,Chipangali,Chasefu,Chasefu,Soy Bean,"7,125.00"
+Musele,-12.14664,25.38972,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"3,726.00"
+Musele Chipili,-10.3909409,29.331578,Northern,Chipili,Chipili,Navy Bean,"4,338.00"
+Musele Chipili,-10.3909409,29.331578,Northern,Chipili,Chipili,Sugar bean,"5,378.00"
+mushika 2(frank),-10.1016625,30.2015573,Northern,Lunte,Lunte B,Navy Bean,"18,711.00"
+mushika 2(frank),-10.1016625,30.2015573,Northern,Lunte,Lunte B,Sugar bean,"17,950.00"
+Mushwala,-14.7597643,24.2299206,Western,Kalumwange,Kalumwange South,Groundnut,"7,303.00"
+Mushwala,-14.7597643,24.2299206,Western,Kalumwange,Kalumwange South,Soy Bean,400.00
+Musungu Shed,-10.1942025,29.7080615,Northern,Kawambwa,Kawambwa,Navy Bean,"2,445.00"
+Musungu Shed,-10.1942025,29.7080615,Northern,Kawambwa,Kawambwa,Sugar bean,"4,708.00"
+Mutale Munkonge,-10.381139,30.376584,Northern,Lunte,Lunte A,Navy Bean,"7,100.00"
+Mutale Munkonge,-10.381139,30.376584,Northern,Lunte,Lunte A,Sugar bean,"1,450.00"
+Muyembe Lewis Shed,-10.1057946,30.1998791,Northern,Lunte,Lunte C,Navy Bean,"11,824.00"
+Muyembe Lewis Shed,-10.1057946,30.1998791,Northern,Lunte,Lunte C,Sugar bean,"1,741.00"
+Muyembe-Menala,-10.097205,30.07868,Northern,Lunte,Lunte C,Navy Bean,"9,982.00"
+Muyembe-Menala,-10.097205,30.07868,Northern,Lunte,Lunte C,Sugar bean,"5,171.00"
+Muzizi,-9.3639537,31.2316945,Northern,Senga Hill,Senga,Navy Bean,"5,194.00"
+Muzizi,-9.3639537,31.2316945,Northern,Senga Hill,Senga,Sugar bean,"5,133.00"
+Mwana Mulangileni,-13.70446,32.134349,Kasenengwa,Kasenengwa,Ng'ongwe,Soy Bean,"2,886.00"
+Mwangala,-14.226855,32.502494,Chadiza,Chadiza East,Chadiza East B,Soy Bean,"9,100.00"
+Mwangala,-14.226855,32.502494,Chadiza,Chadiza East,Chadiza East B,Sunnhemp,259.00
+Mwangazi,-14.0610087,32.4703794,Chadiza,Chadiza East,Chadiza East A,Soy Bean,"12,226.00"
+Mwangazi,-14.0610087,32.4703794,Chadiza,Chadiza East,Chadiza East A,Sunflower,0.00
+Mwelwa,-13.6869483,32.3636767,Kasenengwa,Kasenengwa,Katondo,Cowpea,"2,006.00"
+Mwelwa,-13.6869483,32.3636767,Kasenengwa,Kasenengwa,Katondo,Groundnut,794.00
+Mwelwa,-13.6869483,32.3636767,Kasenengwa,Kasenengwa,Katondo,Soy Bean,"67,049.00"
+Mwelwa,-13.6869483,32.3636767,Kasenengwa,Kasenengwa,Katondo,Sunnhemp,129.00
+Mwibwe BBP,-10.18695,30.0703567,Northern,Luwingu,Luwingu A,Navy Bean,"5,010.00"
+Mwibwe BBP,-10.18695,30.0703567,Northern,Luwingu,Luwingu A,Sugar bean,"12,146.00"
+Mzime,-14.18586,32.00382,Katete,Chanjoka-Kameta,Katete A,Soy Bean,"16,162.00"
+Mzoole,-13.27876,32.691313,Chipangali,Chinunda,Chitandika,Groundnut,"1,177.00"
+Mzoole,-13.27876,32.691313,Chipangali,Chinunda,Chitandika,Soy Bean,"8,151.00"
+Namaloba,-14.771182,24.794475,Western,Mulambwa,Mulambwa North,Groundnut,"5,967.00"
+Namaloba,-14.771182,24.794475,Western,Mulambwa,Mulambwa North,Soy Bean,61.00
+Naviruli Shed,-14.03495,32.1803,Chadiza,Chadiza West,Chadiza West B,Soy Bean,"9,147.00"
+Naviruli Shed,-14.03495,32.1803,Chadiza,Chadiza West,Chadiza West B,Sunflower,174.00
+Naviruli Shed,-14.03495,32.1803,Chadiza,Chadiza West,Chadiza West B,Sunnhemp,22.00
+Ndaiwala SNV BBP,-12.796973,32.936612,Chipangali,Chasefu,KAMBALE,Groundnut,329.00
+Ngwanda,-13.395411,32.690078,Chipangali,Chinunda,Mafuta,Groundnut,"2,239.00"
+Ngwanda,-13.395411,32.690078,Chipangali,Chinunda,Mafuta,Soy Bean,"8,054.00"
+Njeke,-10.214884,29.798963,Northern,Kawambwa,Kawambwa,Navy Bean,"10,027.00"
+Njeke,-10.214884,29.798963,Northern,Kawambwa,Kawambwa,Sugar bean,"1,777.00"
+Njolo,-13.3198058,32.7001978,Chipangali,Chinunda,Mafuta,Groundnut,901.00
+Njolo,-13.3198058,32.7001978,Chipangali,Chinunda,Mafuta,Soy Bean,"8,203.00"
+Nkalanga,-10.2114971,30.2338917,Northern,Lunte,Lunte B,Navy Bean,"10,880.00"
+Nkalanga,-10.2114971,30.2338917,Northern,Lunte,Lunte B,Sugar bean,"12,399.00"
+Nkantya,-9.4289745,31.230979,Northern,Senga Hill,Senga,Navy Bean,"3,057.00"
+Nkantya,-9.4289745,31.230979,Northern,Senga Hill,Senga,Sugar bean,"1,712.00"
+Nkatya,-9.4593817,31.3667717,Northern,Senga Hill,Senga,Sugar bean,30.00
+Nkenyauli,-12.1943646,25.2165195,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"9,576.00"
+Nkheyema,-14.837614,25.153949,Western,Mulambwa,Mulambwa South,Groundnut,99.00
+Nkheyema,-14.837614,25.153949,Western,Mulambwa,Mulambwa South,Soy Bean,"3,245.00"
+Nkhuni Village,-13.6395817,32.248875,Kasenengwa,Kasenengwa,Mulima,Groundnut,"1,455.00"
+Nkhuni Village,-13.6395817,32.248875,Kasenengwa,Kasenengwa,Mulima,Soy Bean,"52,100.00"
+Nkhuni Village,-13.6395817,32.248875,Kasenengwa,Kasenengwa,Mulima,Sunflower,163.00
+Nkowelani,-14.28721,32.0685,Katete,Chanjoka-Kameta,Katete C,Soy Bean,"8,640.00"
+Nobbies,-10.0951833,30.1352317,Northern,Lunte,Lunte B,Navy Bean,32.00
+Nobbies,-10.0951833,30.1352317,Northern,Lunte,Lunte B,Sugar bean,"4,423.00"
+Northern Settlement,-12.171205,25.440222,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,810.00
+Ntondo,-13.32706,32.651587,Chipangali,Chinunda,Chitandika,Groundnut,325.00
+Ntondo,-13.32706,32.651587,Chipangali,Chinunda,Chitandika,Soy Bean,"2,823.00"
+Nyavi,-12.125969,33.061586,Chipangali,Nkhanga,Nkhanga,Groundnut,"4,369.00"
+Osward Kombe - Musundu,-9.9742,29.89771,Northern,Kawambwa,Kawambwa,Navy Bean,"17,900.00"
+Osward Kombe - Musundu,-9.9742,29.89771,Northern,Kawambwa,Kawambwa,Sugar bean,"3,384.00"
+Patricia Chisanga - Muyembe,-10.096561,30.07501,Northern,Lunte,Lunte C,Navy Bean,"14,405.00"
+Patricia Chisanga - Muyembe,-10.096561,30.07501,Northern,Lunte,Lunte C,Sugar bean,"5,440.00"
+Pecha,-10.211739,30.360469,Northern,Lunte,Lunte A,Navy Bean,"10,300.00"
+Pecha,-10.211739,30.360469,Northern,Lunte,Lunte A,Sugar bean,"7,950.00"
+Pwata POD,-13.6286675,32.3150376,Kasenengwa,Kasenengwa,Pwata,Cowpea,469.00
+Pwata POD,-13.6286675,32.3150376,Kasenengwa,Kasenengwa,Pwata,Soy Bean,"29,777.00"
+Pwata POD,-13.6286675,32.3150376,Kasenengwa,Kasenengwa,Pwata,Sunflower,90.00
+Pwata POD,-13.6286675,32.3150376,Kasenengwa,Kasenengwa,Pwata,Sunnhemp,42.00
+Rightwell Ndashi - Mwenda,-10.486721,29.1769869,Northern,Chipili,Chipili,Navy Bean,"9,047.00"
+Rightwell Ndashi - Mwenda,-10.486721,29.1769869,Northern,Chipili,Chipili,Sugar bean,"1,522.00"
+Rosemary Chikonda - Mwenda,-12.825723,30.869452,Northern,Lavushimanda,Lavushimanda,Sugar bean,"4,563.00"
+Ruth Mphande - Chasamwa,-12.183159,33.093865,Chipangali,Nkhanga,Nkhanga,Groundnut,913.00
+Ruth Mphande - Chasamwa,-12.183159,33.093865,Chipangali,Nkhanga,Nkhanga,Soy Bean,31.00
+Sanja,-10.3625631,29.9691514,Northern,Luwingu,Luwingu B,Navy Bean,521.00
+Sanja,-10.3625631,29.9691514,Northern,Luwingu,Luwingu B,Sugar bean,"3,486.00"
+Shapi,-10.0959217,30.136193,Northern,Lunte,Lunte B,Navy Bean,"19,357.00"
+Shapi,-10.0959217,30.136193,Northern,Lunte,Lunte B,Sugar bean,"38,549.00"
+Shenegene,-12.27794,25.35061,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"1,863.00"
+Shidongwe,-14.2413967,24.9659233,Western,Kalumwange,Kalumwange North,Groundnut,541.00
+Shidongwe,-14.2413967,24.9659233,Western,Kalumwange,Kalumwange North,Soy Bean,"32,645.00"
+Siabvuma BP,-13.6822867,32.329535,Kasenengwa,Kasenengwa,Katondo,Cowpea,103.00
+Siabvuma BP,-13.6822867,32.329535,Kasenengwa,Kasenengwa,Katondo,Soy Bean,"49,108.00"
+Siabvuma BP,-13.6822867,32.329535,Kasenengwa,Kasenengwa,Katondo,Sunnhemp,50.00
+Simecha,-13.612314,32.384602,Kasenengwa,Kasenengwa,Katondo,Cowpea,458.00
+Simecha,-13.612314,32.384602,Kasenengwa,Kasenengwa,Katondo,Soy Bean,"17,468.00"
+Simecha,-13.612314,32.384602,Kasenengwa,Kasenengwa,Katondo,Sunnhemp,193.00
+Simoni SNV,-14.215101,32.025867,Katete,Chanjoka-Kameta,Katete C,Soy Bean,264.00
+Skelenge,-14.28805,25.05541,Western,Mulambwa,Mulambwa North,Groundnut,"19,410.00"
+Skelenge,-14.28805,25.05541,Western,Mulambwa,Mulambwa North,Soy Bean,357.00
+Soweto,-11.954102,32.964876,Chipangali,Chasefu,Chasefu,Groundnut,924.00
+Soweto,-11.954102,32.964876,Chipangali,Chasefu,Chasefu,Soy Bean,"9,250.00"
+Sunday,-10.2497664,29.9073708,Northern,Kawambwa,Kawambwa,Navy Bean,865.00
+Sunday,-10.2497664,29.9073708,Northern,Kawambwa,Kawambwa,Sugar bean,"1,821.00"
+Tambala,-13.441816,32.553714,Chipangali,Mnukwa,Mnukwa,Soy Bean,"27,176.00"
+Temelani,-14.313525,31.93141,Katete,Chanjoka-Kameta,Katete B,Soy Bean,"14,018.00"
+Thaulo SNV,-14.227147,31.966997,Katete,Chanjoka-Kameta,Katete B,Soy Bean,528.00
+Tomu Ilunga,-12.31075,25.10866,North-Western,Musele & Kisasa,Musele & Kisasa,Sugar bean,"1,094.00"
+Trial Buyback Point,-15.4,28.2,Test Region,// Kabwe,// Kabwe Central,Soy Bean,500.00
+Twashuka,-10.201042,30.411644,Northern,Lunte,Lunte A,Navy Bean,"14,750.00"
+Twashuka,-10.201042,30.411644,Northern,Lunte,Lunte A,Sugar bean,"10,050.00"
+Twikatane,-10.0420251,30.143176,Northern,Lunte,Lunte B,Navy Bean,"9,118.00"
+Twikatane,-10.0420251,30.143176,Northern,Lunte,Lunte B,Sugar bean,"8,060.00"
+Vincent Bulaya Market,-9.595314,30.537789,Northern,Lunte,Lunte D,Navy Bean,"5,160.00"
+Vincent Bulaya Market,-9.595314,30.537789,Northern,Lunte,Lunte D,Sugar bean,"2,972.00"
+Yambani,-13.423423,32.305988,Chipangali,Mphomwa,Kamwanjiri,Soy Bean,"8,450.00"
+Yohane Market Shed,-9.662748,30.523843,Northern,Lunte,Lunte D,Navy Bean,"9,096.00"
+Yohane Market Shed,-9.662748,30.523843,Northern,Lunte,Lunte D,Sugar bean,"2,094.00"
+Zemba SNV,-14.187913,31.978905,Katete,Chanjoka-Kameta,Katete C,Soy Bean,363.00
+Zoto,-13.8387675,32.1568935,Katete,Katete-Thiwi,Thiwi,Soy Bean,"21,422.00"
+Zungula,-13.7062404,32.3952237,Kasenengwa,Kasenengwa,Kasenengwa,Groundnut,279.00
+Zungula,-13.7062404,32.3952237,Kasenengwa,Kasenengwa,Kasenengwa,Soy Bean,"22,380.00"
