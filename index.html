@@ -390,23 +390,6 @@ h1{
           All Crops
         </option>
       </select>
-      <label class="field-label">
-        Show
-      </label>
-      <select id="rankingFilter">
-        <option value="all">
-          All buying points
-        </option>
-        <option value="10">
-          Top 10 highest producing
-        </option>
-        <option value="20">
-          Top 20 highest producing
-        </option>
-        <option value="50">
-          Top 50 highest producing
-        </option>
-      </select>
       <button
         id="clearFilters"
         class="clear-filter"
@@ -1375,10 +1358,6 @@ function updateFilterStatus(){
     document.getElementById(
       "cropFilter"
     ).value;
-  const ranking =
-    document.getElementById(
-      "rankingFilter"
-    ).value;
   const messages = [];
   if(hub){
     messages.push(
@@ -1388,11 +1367,6 @@ function updateFilterStatus(){
   if(crop){
     messages.push(
       "Crop: " + crop
-    );
-  }
-  if(ranking !== "all"){
-    messages.push(
-      "Top " + ranking
     );
   }
   const status =
@@ -1450,10 +1424,6 @@ function renderFilteredData(){
     document.getElementById(
       "cropFilter"
     ).value;
-  const ranking =
-    document.getElementById(
-      "rankingFilter"
-    ).value;
   /* Filter rows */
   filteredRows =
     currentRows.filter(row => {
@@ -1490,19 +1460,6 @@ function renderFilteredData(){
       point =>
         pointTotal(point) > 0
     );
-  /* Ranking */
-  if(ranking !== "all"){
-    buyingPoints.sort(
-      (a,b) =>
-        pointTotal(b) -
-        pointTotal(a)
-    );
-    buyingPoints =
-      buyingPoints.slice(
-        0,
-        Number(ranking)
-      );
-  }
   /* Groups */
   byCatchment =
     groupBy(
@@ -1916,14 +1873,6 @@ document
   );
 document
   .getElementById(
-    "rankingFilter"
-  )
-  .addEventListener(
-    "change",
-    renderFilteredData
-  );
-document
-  .getElementById(
     "clearFilters"
   )
   .addEventListener(
@@ -1935,9 +1884,6 @@ document
       document.getElementById(
         "cropFilter"
       ).value = "";
-      document.getElementById(
-        "rankingFilter"
-      ).value = "all";
       filteredRows =
         currentRows.slice();
       renderAll();
